@@ -1,0 +1,593 @@
+[1.838s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[1.839s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7ee38e28d9a0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7ee38e28d670>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7ee38e28d670>>, mixin_verb=('build',))
+[2.113s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[2.114s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[2.114s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[2.114s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[2.115s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[2.115s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[2.115s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone'
+[2.118s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[2.118s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[2.119s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[2.120s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[2.120s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[2.120s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[2.121s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[2.121s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[2.121s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[2.285s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[2.286s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[2.286s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[2.287s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[2.287s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[2.292s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[2.292s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[2.295s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[2.300s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['ignore', 'ignore_ament_install']
+[2.300s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ignore'
+[2.302s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ignore_ament_install'
+[2.305s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['colcon_pkg']
+[2.305s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'colcon_pkg'
+[2.307s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['colcon_meta']
+[2.307s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'colcon_meta'
+[2.309s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['ros']
+[2.309s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ros'
+[2.316s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['cmake', 'python']
+[2.317s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'cmake'
+[2.318s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'python'
+[2.320s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['python_setup_py']
+[2.320s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'python_setup_py'
+[2.326s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[2.326s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[2.328s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[2.338s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[2.338s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[2.340s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[2.344s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['ignore', 'ignore_ament_install']
+[2.345s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ignore'
+[2.346s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ignore_ament_install'
+[2.350s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['colcon_pkg']
+[2.350s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'colcon_pkg'
+[2.352s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['colcon_meta']
+[2.352s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'colcon_meta'
+[2.354s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['ros']
+[2.354s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ros'
+[2.361s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['cmake', 'python']
+[2.361s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'cmake'
+[2.363s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'python'
+[2.365s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['python_setup_py']
+[2.365s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'python_setup_py'
+[2.371s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[2.372s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[2.373s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[2.376s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[2.376s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[2.378s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[2.378s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[2.380s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[2.381s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[2.388s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[2.388s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[2.389s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[2.391s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[2.391s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[2.400s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_layer) by extensions ['ignore', 'ignore_ament_install']
+[2.400s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_layer) by extension 'ignore'
+[2.403s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_layer) by extension 'ignore_ament_install'
+[2.407s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_layer) by extensions ['colcon_pkg']
+[2.407s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_layer) by extension 'colcon_pkg'
+[2.410s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_layer) by extensions ['colcon_meta']
+[2.410s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_layer) by extension 'colcon_meta'
+[2.414s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_layer) by extensions ['ros']
+[2.414s] Level 1:colcon.colcon_core.package_identification:_identify(src/control_layer) by extension 'ros'
+[2.445s] DEBUG:colcon.colcon_core.package_identification:Package 'src/control_layer' with type 'ros.ament_cmake' and name 'control_layer'
+[2.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_bringup) by extensions ['ignore', 'ignore_ament_install']
+[2.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_bringup) by extension 'ignore'
+[2.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_bringup) by extension 'ignore_ament_install'
+[2.463s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_bringup) by extensions ['colcon_pkg']
+[2.463s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_bringup) by extension 'colcon_pkg'
+[2.466s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_bringup) by extensions ['colcon_meta']
+[2.466s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_bringup) by extension 'colcon_meta'
+[2.470s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_bringup) by extensions ['ros']
+[2.470s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_bringup) by extension 'ros'
+[2.496s] DEBUG:colcon.colcon_core.package_identification:Package 'src/drone_bringup' with type 'ros.ament_python' and name 'drone_bringup'
+[2.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/fault_handler) by extensions ['ignore', 'ignore_ament_install']
+[2.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/fault_handler) by extension 'ignore'
+[2.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/fault_handler) by extension 'ignore_ament_install'
+[2.512s] Level 1:colcon.colcon_core.package_identification:_identify(src/fault_handler) by extensions ['colcon_pkg']
+[2.512s] Level 1:colcon.colcon_core.package_identification:_identify(src/fault_handler) by extension 'colcon_pkg'
+[2.515s] Level 1:colcon.colcon_core.package_identification:_identify(src/fault_handler) by extensions ['colcon_meta']
+[2.515s] Level 1:colcon.colcon_core.package_identification:_identify(src/fault_handler) by extension 'colcon_meta'
+[2.519s] Level 1:colcon.colcon_core.package_identification:_identify(src/fault_handler) by extensions ['ros']
+[2.519s] Level 1:colcon.colcon_core.package_identification:_identify(src/fault_handler) by extension 'ros'
+[2.546s] DEBUG:colcon.colcon_core.package_identification:Package 'src/fault_handler' with type 'ros.ament_python' and name 'fault_handler'
+[2.555s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['ignore', 'ignore_ament_install']
+[2.555s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'ignore'
+[2.558s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'ignore_ament_install'
+[2.563s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['colcon_pkg']
+[2.563s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'colcon_pkg'
+[2.566s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['colcon_meta']
+[2.566s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'colcon_meta'
+[2.571s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['ros']
+[2.571s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'ros'
+[2.583s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['cmake', 'python']
+[2.583s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'cmake'
+[2.585s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'python'
+[2.588s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['python_setup_py']
+[2.588s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'python_setup_py'
+[2.598s] Level 1:colcon.colcon_core.package_identification:_identify(src/navigation_layer) by extensions ['ignore', 'ignore_ament_install']
+[2.598s] Level 1:colcon.colcon_core.package_identification:_identify(src/navigation_layer) by extension 'ignore'
+[2.601s] Level 1:colcon.colcon_core.package_identification:_identify(src/navigation_layer) by extension 'ignore_ament_install'
+[2.605s] Level 1:colcon.colcon_core.package_identification:_identify(src/navigation_layer) by extensions ['colcon_pkg']
+[2.606s] Level 1:colcon.colcon_core.package_identification:_identify(src/navigation_layer) by extension 'colcon_pkg'
+[2.608s] Level 1:colcon.colcon_core.package_identification:_identify(src/navigation_layer) by extensions ['colcon_meta']
+[2.608s] Level 1:colcon.colcon_core.package_identification:_identify(src/navigation_layer) by extension 'colcon_meta'
+[2.612s] Level 1:colcon.colcon_core.package_identification:_identify(src/navigation_layer) by extensions ['ros']
+[2.612s] Level 1:colcon.colcon_core.package_identification:_identify(src/navigation_layer) by extension 'ros'
+[2.640s] DEBUG:colcon.colcon_core.package_identification:Package 'src/navigation_layer' with type 'ros.ament_python' and name 'navigation_layer'
+[2.648s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_layer) by extensions ['ignore', 'ignore_ament_install']
+[2.649s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_layer) by extension 'ignore'
+[2.651s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_layer) by extension 'ignore_ament_install'
+[2.656s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_layer) by extensions ['colcon_pkg']
+[2.657s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_layer) by extension 'colcon_pkg'
+[2.659s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_layer) by extensions ['colcon_meta']
+[2.660s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_layer) by extension 'colcon_meta'
+[2.663s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_layer) by extensions ['ros']
+[2.663s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_layer) by extension 'ros'
+[2.688s] DEBUG:colcon.colcon_core.package_identification:Package 'src/perception_layer' with type 'ros.ament_python' and name 'perception_layer'
+[2.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_layer) by extensions ['ignore', 'ignore_ament_install']
+[2.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_layer) by extension 'ignore'
+[2.698s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_layer) by extension 'ignore_ament_install'
+[2.703s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_layer) by extensions ['colcon_pkg']
+[2.703s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_layer) by extension 'colcon_pkg'
+[2.706s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_layer) by extensions ['colcon_meta']
+[2.706s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_layer) by extension 'colcon_meta'
+[2.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_layer) by extensions ['ros']
+[2.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/slam_layer) by extension 'ros'
+[2.739s] DEBUG:colcon.colcon_core.package_identification:Package 'src/slam_layer' with type 'ros.ament_cmake' and name 'slam_layer'
+[2.748s] Level 1:colcon.colcon_core.package_identification:_identify(src/telemetry) by extensions ['ignore', 'ignore_ament_install']
+[2.748s] Level 1:colcon.colcon_core.package_identification:_identify(src/telemetry) by extension 'ignore'
+[2.751s] Level 1:colcon.colcon_core.package_identification:_identify(src/telemetry) by extension 'ignore_ament_install'
+[2.756s] Level 1:colcon.colcon_core.package_identification:_identify(src/telemetry) by extensions ['colcon_pkg']
+[2.756s] Level 1:colcon.colcon_core.package_identification:_identify(src/telemetry) by extension 'colcon_pkg'
+[2.758s] Level 1:colcon.colcon_core.package_identification:_identify(src/telemetry) by extensions ['colcon_meta']
+[2.759s] Level 1:colcon.colcon_core.package_identification:_identify(src/telemetry) by extension 'colcon_meta'
+[2.763s] Level 1:colcon.colcon_core.package_identification:_identify(src/telemetry) by extensions ['ros']
+[2.763s] Level 1:colcon.colcon_core.package_identification:_identify(src/telemetry) by extension 'ros'
+[2.791s] DEBUG:colcon.colcon_core.package_identification:Package 'src/telemetry' with type 'ros.ament_python' and name 'telemetry'
+[2.796s] Level 1:colcon.colcon_core.package_identification:_identify(worlds) by extensions ['ignore', 'ignore_ament_install']
+[2.796s] Level 1:colcon.colcon_core.package_identification:_identify(worlds) by extension 'ignore'
+[2.798s] Level 1:colcon.colcon_core.package_identification:_identify(worlds) by extension 'ignore_ament_install'
+[2.801s] Level 1:colcon.colcon_core.package_identification:_identify(worlds) by extensions ['colcon_pkg']
+[2.801s] Level 1:colcon.colcon_core.package_identification:_identify(worlds) by extension 'colcon_pkg'
+[2.803s] Level 1:colcon.colcon_core.package_identification:_identify(worlds) by extensions ['colcon_meta']
+[2.803s] Level 1:colcon.colcon_core.package_identification:_identify(worlds) by extension 'colcon_meta'
+[2.805s] Level 1:colcon.colcon_core.package_identification:_identify(worlds) by extensions ['ros']
+[2.805s] Level 1:colcon.colcon_core.package_identification:_identify(worlds) by extension 'ros'
+[2.813s] Level 1:colcon.colcon_core.package_identification:_identify(worlds) by extensions ['cmake', 'python']
+[2.813s] Level 1:colcon.colcon_core.package_identification:_identify(worlds) by extension 'cmake'
+[2.815s] Level 1:colcon.colcon_core.package_identification:_identify(worlds) by extension 'python'
+[2.816s] Level 1:colcon.colcon_core.package_identification:_identify(worlds) by extensions ['python_setup_py']
+[2.817s] Level 1:colcon.colcon_core.package_identification:_identify(worlds) by extension 'python_setup_py'
+[2.819s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[2.819s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[2.820s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[2.820s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[2.820s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[3.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[3.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[3.436s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 7 installed packages in /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install
+[3.438s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 290 installed packages in /opt/ros/jazzy
+[3.439s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[3.675s] Level 5:colcon.colcon_core.verb:set package 'control_layer' build argument 'cmake_args' from command line to 'None'
+[3.676s] Level 5:colcon.colcon_core.verb:set package 'control_layer' build argument 'cmake_target' from command line to 'None'
+[3.676s] Level 5:colcon.colcon_core.verb:set package 'control_layer' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.676s] Level 5:colcon.colcon_core.verb:set package 'control_layer' build argument 'cmake_clean_cache' from command line to 'False'
+[3.677s] Level 5:colcon.colcon_core.verb:set package 'control_layer' build argument 'cmake_clean_first' from command line to 'False'
+[3.677s] Level 5:colcon.colcon_core.verb:set package 'control_layer' build argument 'cmake_force_configure' from command line to 'False'
+[3.677s] Level 5:colcon.colcon_core.verb:set package 'control_layer' build argument 'ament_cmake_args' from command line to 'None'
+[3.677s] Level 5:colcon.colcon_core.verb:set package 'control_layer' build argument 'catkin_cmake_args' from command line to 'None'
+[3.678s] Level 5:colcon.colcon_core.verb:set package 'control_layer' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.678s] DEBUG:colcon.colcon_core.verb:Building package 'control_layer' with the following arguments: {'ament_cmake_args': None, 'build_base': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer', 'merge_install': False, 'path': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/control_layer', 'symlink_install': True, 'test_result_base': None}
+[3.678s] Level 5:colcon.colcon_core.verb:set package 'drone_bringup' build argument 'cmake_args' from command line to 'None'
+[3.678s] Level 5:colcon.colcon_core.verb:set package 'drone_bringup' build argument 'cmake_target' from command line to 'None'
+[3.679s] Level 5:colcon.colcon_core.verb:set package 'drone_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.679s] Level 5:colcon.colcon_core.verb:set package 'drone_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[3.680s] Level 5:colcon.colcon_core.verb:set package 'drone_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[3.680s] Level 5:colcon.colcon_core.verb:set package 'drone_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[3.680s] Level 5:colcon.colcon_core.verb:set package 'drone_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[3.681s] Level 5:colcon.colcon_core.verb:set package 'drone_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[3.681s] Level 5:colcon.colcon_core.verb:set package 'drone_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.682s] DEBUG:colcon.colcon_core.verb:Building package 'drone_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup', 'merge_install': False, 'path': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/drone_bringup', 'symlink_install': True, 'test_result_base': None}
+[3.682s] Level 5:colcon.colcon_core.verb:set package 'fault_handler' build argument 'cmake_args' from command line to 'None'
+[3.683s] Level 5:colcon.colcon_core.verb:set package 'fault_handler' build argument 'cmake_target' from command line to 'None'
+[3.683s] Level 5:colcon.colcon_core.verb:set package 'fault_handler' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.683s] Level 5:colcon.colcon_core.verb:set package 'fault_handler' build argument 'cmake_clean_cache' from command line to 'False'
+[3.683s] Level 5:colcon.colcon_core.verb:set package 'fault_handler' build argument 'cmake_clean_first' from command line to 'False'
+[3.684s] Level 5:colcon.colcon_core.verb:set package 'fault_handler' build argument 'cmake_force_configure' from command line to 'False'
+[3.684s] Level 5:colcon.colcon_core.verb:set package 'fault_handler' build argument 'ament_cmake_args' from command line to 'None'
+[3.684s] Level 5:colcon.colcon_core.verb:set package 'fault_handler' build argument 'catkin_cmake_args' from command line to 'None'
+[3.685s] Level 5:colcon.colcon_core.verb:set package 'fault_handler' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.685s] DEBUG:colcon.colcon_core.verb:Building package 'fault_handler' with the following arguments: {'ament_cmake_args': None, 'build_base': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler', 'merge_install': False, 'path': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/fault_handler', 'symlink_install': True, 'test_result_base': None}
+[3.686s] Level 5:colcon.colcon_core.verb:set package 'navigation_layer' build argument 'cmake_args' from command line to 'None'
+[3.686s] Level 5:colcon.colcon_core.verb:set package 'navigation_layer' build argument 'cmake_target' from command line to 'None'
+[3.686s] Level 5:colcon.colcon_core.verb:set package 'navigation_layer' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.687s] Level 5:colcon.colcon_core.verb:set package 'navigation_layer' build argument 'cmake_clean_cache' from command line to 'False'
+[3.687s] Level 5:colcon.colcon_core.verb:set package 'navigation_layer' build argument 'cmake_clean_first' from command line to 'False'
+[3.687s] Level 5:colcon.colcon_core.verb:set package 'navigation_layer' build argument 'cmake_force_configure' from command line to 'False'
+[3.688s] Level 5:colcon.colcon_core.verb:set package 'navigation_layer' build argument 'ament_cmake_args' from command line to 'None'
+[3.688s] Level 5:colcon.colcon_core.verb:set package 'navigation_layer' build argument 'catkin_cmake_args' from command line to 'None'
+[3.688s] Level 5:colcon.colcon_core.verb:set package 'navigation_layer' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.689s] DEBUG:colcon.colcon_core.verb:Building package 'navigation_layer' with the following arguments: {'ament_cmake_args': None, 'build_base': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer', 'merge_install': False, 'path': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/navigation_layer', 'symlink_install': True, 'test_result_base': None}
+[3.689s] Level 5:colcon.colcon_core.verb:set package 'perception_layer' build argument 'cmake_args' from command line to 'None'
+[3.690s] Level 5:colcon.colcon_core.verb:set package 'perception_layer' build argument 'cmake_target' from command line to 'None'
+[3.690s] Level 5:colcon.colcon_core.verb:set package 'perception_layer' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.690s] Level 5:colcon.colcon_core.verb:set package 'perception_layer' build argument 'cmake_clean_cache' from command line to 'False'
+[3.691s] Level 5:colcon.colcon_core.verb:set package 'perception_layer' build argument 'cmake_clean_first' from command line to 'False'
+[3.691s] Level 5:colcon.colcon_core.verb:set package 'perception_layer' build argument 'cmake_force_configure' from command line to 'False'
+[3.691s] Level 5:colcon.colcon_core.verb:set package 'perception_layer' build argument 'ament_cmake_args' from command line to 'None'
+[3.692s] Level 5:colcon.colcon_core.verb:set package 'perception_layer' build argument 'catkin_cmake_args' from command line to 'None'
+[3.692s] Level 5:colcon.colcon_core.verb:set package 'perception_layer' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.692s] DEBUG:colcon.colcon_core.verb:Building package 'perception_layer' with the following arguments: {'ament_cmake_args': None, 'build_base': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer', 'merge_install': False, 'path': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/perception_layer', 'symlink_install': True, 'test_result_base': None}
+[3.693s] Level 5:colcon.colcon_core.verb:set package 'slam_layer' build argument 'cmake_args' from command line to 'None'
+[3.693s] Level 5:colcon.colcon_core.verb:set package 'slam_layer' build argument 'cmake_target' from command line to 'None'
+[3.693s] Level 5:colcon.colcon_core.verb:set package 'slam_layer' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.693s] Level 5:colcon.colcon_core.verb:set package 'slam_layer' build argument 'cmake_clean_cache' from command line to 'False'
+[3.693s] Level 5:colcon.colcon_core.verb:set package 'slam_layer' build argument 'cmake_clean_first' from command line to 'False'
+[3.694s] Level 5:colcon.colcon_core.verb:set package 'slam_layer' build argument 'cmake_force_configure' from command line to 'False'
+[3.694s] Level 5:colcon.colcon_core.verb:set package 'slam_layer' build argument 'ament_cmake_args' from command line to 'None'
+[3.694s] Level 5:colcon.colcon_core.verb:set package 'slam_layer' build argument 'catkin_cmake_args' from command line to 'None'
+[3.695s] Level 5:colcon.colcon_core.verb:set package 'slam_layer' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.695s] DEBUG:colcon.colcon_core.verb:Building package 'slam_layer' with the following arguments: {'ament_cmake_args': None, 'build_base': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer', 'merge_install': False, 'path': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/slam_layer', 'symlink_install': True, 'test_result_base': None}
+[3.695s] Level 5:colcon.colcon_core.verb:set package 'telemetry' build argument 'cmake_args' from command line to 'None'
+[3.696s] Level 5:colcon.colcon_core.verb:set package 'telemetry' build argument 'cmake_target' from command line to 'None'
+[3.696s] Level 5:colcon.colcon_core.verb:set package 'telemetry' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.696s] Level 5:colcon.colcon_core.verb:set package 'telemetry' build argument 'cmake_clean_cache' from command line to 'False'
+[3.697s] Level 5:colcon.colcon_core.verb:set package 'telemetry' build argument 'cmake_clean_first' from command line to 'False'
+[3.697s] Level 5:colcon.colcon_core.verb:set package 'telemetry' build argument 'cmake_force_configure' from command line to 'False'
+[3.698s] Level 5:colcon.colcon_core.verb:set package 'telemetry' build argument 'ament_cmake_args' from command line to 'None'
+[3.698s] Level 5:colcon.colcon_core.verb:set package 'telemetry' build argument 'catkin_cmake_args' from command line to 'None'
+[3.698s] Level 5:colcon.colcon_core.verb:set package 'telemetry' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.699s] DEBUG:colcon.colcon_core.verb:Building package 'telemetry' with the following arguments: {'ament_cmake_args': None, 'build_base': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry', 'merge_install': False, 'path': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/telemetry', 'symlink_install': True, 'test_result_base': None}
+[3.699s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[3.700s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[3.701s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/control_layer' with build type 'ament_cmake'
+[3.701s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/control_layer'
+[3.760s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[3.761s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.761s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.999s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/drone_bringup' with build type 'ament_python'
+[4.000s] Level 1:colcon.colcon_core.shell:create_environment_hook('drone_bringup', 'ament_prefix_path')
+[4.000s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/hook/ament_prefix_path.ps1'
+[4.032s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/hook/ament_prefix_path.dsv'
+[4.061s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/hook/ament_prefix_path.sh'
+[4.089s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.090s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.323s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/fault_handler' with build type 'ament_python'
+[4.324s] Level 1:colcon.colcon_core.shell:create_environment_hook('fault_handler', 'ament_prefix_path')
+[4.325s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/hook/ament_prefix_path.ps1'
+[4.355s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/hook/ament_prefix_path.dsv'
+[4.385s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/hook/ament_prefix_path.sh'
+[4.412s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.413s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.650s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/navigation_layer' with build type 'ament_python'
+[4.651s] Level 1:colcon.colcon_core.shell:create_environment_hook('navigation_layer', 'ament_prefix_path')
+[4.651s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/hook/ament_prefix_path.ps1'
+[4.677s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/hook/ament_prefix_path.dsv'
+[4.707s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/hook/ament_prefix_path.sh'
+[4.736s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.737s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.975s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/perception_layer' with build type 'ament_python'
+[4.976s] Level 1:colcon.colcon_core.shell:create_environment_hook('perception_layer', 'ament_prefix_path')
+[4.976s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/hook/ament_prefix_path.ps1'
+[5.004s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/hook/ament_prefix_path.dsv'
+[5.034s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/hook/ament_prefix_path.sh'
+[5.064s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.064s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.295s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/slam_layer' with build type 'ament_cmake'
+[5.296s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/slam_layer'
+[5.297s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.297s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.525s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/telemetry' with build type 'ament_python'
+[5.526s] Level 1:colcon.colcon_core.shell:create_environment_hook('telemetry', 'ament_prefix_path')
+[5.527s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/hook/ament_prefix_path.ps1'
+[5.555s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/hook/ament_prefix_path.dsv'
+[5.585s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/hook/ament_prefix_path.sh'
+[5.615s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.615s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.947s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy /usr/bin/cmake /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/control_layer -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer
+[8.620s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/drone_bringup'
+[8.620s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[8.621s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[11.239s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/fault_handler'
+[11.239s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[11.240s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[14.347s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/navigation_layer'
+[14.348s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[14.348s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[17.362s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/perception_layer'
+[17.363s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[17.363s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[17.687s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy /usr/bin/cmake /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/slam_layer -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer
+[20.093s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/telemetry'
+[20.094s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[20.094s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[20.386s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy /usr/bin/cmake /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/control_layer -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer
+[20.404s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy /usr/bin/cmake --build /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer -- -j16 -l16
+[21.858s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy /usr/bin/cmake --build /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer -- -j16 -l16
+[21.914s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy /usr/bin/cmake --install /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer
+[20.003s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(control_layer)
+[20.005s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy /usr/bin/cmake --install /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer
+[20.048s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer' for CMake module files
+[20.244s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer' for CMake config files
+[20.447s] Level 1:colcon.colcon_core.shell:create_environment_hook('control_layer', 'cmake_prefix_path')
+[20.448s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/hook/cmake_prefix_path.ps1'
+[20.476s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/hook/cmake_prefix_path.dsv'
+[20.503s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/hook/cmake_prefix_path.sh'
+[20.537s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/lib'
+[20.544s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/bin'
+[20.548s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/lib/pkgconfig/control_layer.pc'
+[20.550s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/lib/python3.12/site-packages'
+[20.554s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/bin'
+[20.556s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/package.ps1'
+[20.578s] INFO:colcon.colcon_core.shell:Creating package descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/package.dsv'
+[20.606s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/package.sh'
+[20.631s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/package.bash'
+[20.655s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/package.zsh'
+[20.676s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/colcon-core/packages/control_layer)
+[20.726s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(control_layer)
+[20.727s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer' for CMake module files
+[20.946s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer' for CMake config files
+[21.143s] Level 1:colcon.colcon_core.shell:create_environment_hook('control_layer', 'cmake_prefix_path')
+[21.144s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/hook/cmake_prefix_path.ps1'
+[21.170s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/hook/cmake_prefix_path.dsv'
+[21.199s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/hook/cmake_prefix_path.sh'
+[21.238s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/lib'
+[21.244s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/bin'
+[21.246s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/lib/pkgconfig/control_layer.pc'
+[21.249s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/lib/python3.12/site-packages'
+[21.253s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/bin'
+[21.255s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/package.ps1'
+[21.280s] INFO:colcon.colcon_core.shell:Creating package descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/package.dsv'
+[21.303s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/package.sh'
+[21.322s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/package.bash'
+[21.345s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/package.zsh'
+[21.367s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/colcon-core/packages/control_layer)
+[22.434s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/ament_index/resource_index/packages/navigation_layer
+[22.438s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/package.xml
+[22.444s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/launch
+[22.450s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/config/costmap_params.yaml
+[22.455s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/config/nav2_params.yaml
+[22.610s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin/navigation_status_node
+[22.814s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/build --no-deps symlink_data --force
+[22.887s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/ament_index/resource_index/packages/telemetry
+[22.892s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/package.xml
+[22.897s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/launch
+[23.035s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin/dashboard_node
+[23.183s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/build --no-deps symlink_data --force
+[23.297s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/ament_index/resource_index/packages/perception_layer
+[23.301s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/package.xml
+[23.306s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/launch
+[23.312s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/config/ekf_params.yaml
+[23.455s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin/ekf_fusion_node
+[23.459s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin/noise_injection_node
+[23.462s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin/sensor_health_monitor
+[23.638s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/build --no-deps symlink_data --force
+[23.722s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/ament_index/resource_index/packages/fault_handler
+[23.727s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/package.xml
+[23.731s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/launch
+[23.872s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin/watchdog_node
+[24.019s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build --no-deps symlink_data --force
+[24.056s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/ament_index/resource_index/packages/drone_bringup
+[24.060s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/package.xml
+[24.067s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/launch/master_launch.py
+[24.073s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/urdf/mavic_webots.urdf
+[24.079s] DEBUG:colcon.colcon_core.task.python.build:While undoing a previous installation files outside the Python library path are being ignored: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/worlds/tunnel_world.wbt
+[24.496s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/build --no-deps symlink_data --force
+[27.318s] Level 1:colcon.colcon_core.shell:create_environment_hook('navigation_layer', 'pythonpath_develop')
+[27.319s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/share/navigation_layer/hook/pythonpath_develop.ps1'
+[27.320s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer' returned '0': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/build --no-deps symlink_data --force
+[27.344s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/share/navigation_layer/hook/pythonpath_develop.dsv'
+[27.374s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/share/navigation_layer/hook/pythonpath_develop.sh'
+[27.403s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer' for CMake module files
+[27.485s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer' for CMake config files
+[27.654s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib'
+[27.661s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin'
+[27.671s] Level 1:colcon.colcon_core.shell:create_environment_hook('navigation_layer', 'path')
+[27.672s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/hook/path.ps1'
+[27.698s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/hook/path.dsv'
+[27.724s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/hook/path.sh'
+[27.753s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/pkgconfig/navigation_layer.pc'
+[27.755s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages'
+[27.757s] Level 1:colcon.colcon_core.shell:create_environment_hook('navigation_layer', 'pythonpath')
+[27.758s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/hook/pythonpath.ps1'
+[27.783s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/hook/pythonpath.dsv'
+[27.811s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/hook/pythonpath.sh'
+[27.835s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin'
+[27.849s] Level 1:colcon.colcon_core.shell:create_environment_hook('navigation_layer', 'pythonscriptspath')
+[27.850s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/hook/pythonscriptspath.ps1'
+[27.876s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/hook/pythonscriptspath.dsv'
+[27.905s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/hook/pythonscriptspath.sh'
+[27.934s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(navigation_layer)
+[27.935s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/package.ps1'
+[27.956s] INFO:colcon.colcon_core.shell:Creating package descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/package.dsv'
+[27.975s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/package.sh'
+[27.997s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/package.bash'
+[28.020s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/package.zsh'
+[28.043s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/colcon-core/packages/navigation_layer)
+[28.063s] Level 1:colcon.colcon_core.shell:create_environment_hook('telemetry', 'pythonpath_develop')
+[28.064s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/share/telemetry/hook/pythonpath_develop.ps1'
+[28.079s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry' returned '0': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/build --no-deps symlink_data --force
+[28.095s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/share/telemetry/hook/pythonpath_develop.dsv'
+[28.121s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/share/telemetry/hook/pythonpath_develop.sh'
+[28.150s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry' for CMake module files
+[28.239s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry' for CMake config files
+[28.386s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib'
+[28.393s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin'
+[28.405s] Level 1:colcon.colcon_core.shell:create_environment_hook('telemetry', 'path')
+[28.405s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/hook/path.ps1'
+[28.430s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/hook/path.dsv'
+[28.456s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/hook/path.sh'
+[28.480s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/pkgconfig/telemetry.pc'
+[28.483s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages'
+[28.488s] Level 1:colcon.colcon_core.shell:create_environment_hook('telemetry', 'pythonpath')
+[28.488s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/hook/pythonpath.ps1'
+[28.515s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/hook/pythonpath.dsv'
+[28.541s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/hook/pythonpath.sh'
+[28.568s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin'
+[28.579s] Level 1:colcon.colcon_core.shell:create_environment_hook('telemetry', 'pythonscriptspath')
+[28.579s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/hook/pythonscriptspath.ps1'
+[28.607s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/hook/pythonscriptspath.dsv'
+[28.632s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/hook/pythonscriptspath.sh'
+[28.657s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(telemetry)
+[28.658s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/package.ps1'
+[28.678s] INFO:colcon.colcon_core.shell:Creating package descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/package.dsv'
+[28.701s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/package.sh'
+[28.727s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/package.bash'
+[28.749s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry/package.zsh'
+[28.770s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/colcon-core/packages/telemetry)
+[28.788s] Level 1:colcon.colcon_core.shell:create_environment_hook('perception_layer', 'pythonpath_develop')
+[28.789s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/share/perception_layer/hook/pythonpath_develop.ps1'
+[28.801s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer' returned '0': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/build --no-deps symlink_data --force
+[28.815s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/share/perception_layer/hook/pythonpath_develop.dsv'
+[28.840s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/share/perception_layer/hook/pythonpath_develop.sh'
+[28.867s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer' for CMake module files
+[28.964s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer' for CMake config files
+[29.140s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib'
+[29.146s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin'
+[29.156s] Level 1:colcon.colcon_core.shell:create_environment_hook('perception_layer', 'path')
+[29.157s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/hook/path.ps1'
+[29.184s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/hook/path.dsv'
+[29.206s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/hook/path.sh'
+[29.232s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/pkgconfig/perception_layer.pc'
+[29.236s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages'
+[29.241s] Level 1:colcon.colcon_core.shell:create_environment_hook('perception_layer', 'pythonpath')
+[29.242s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/hook/pythonpath.ps1'
+[29.273s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/hook/pythonpath.dsv'
+[29.299s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/hook/pythonpath.sh'
+[29.326s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin'
+[29.337s] Level 1:colcon.colcon_core.shell:create_environment_hook('perception_layer', 'pythonscriptspath')
+[29.337s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/hook/pythonscriptspath.ps1'
+[29.363s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/hook/pythonscriptspath.dsv'
+[29.388s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/hook/pythonscriptspath.sh'
+[29.414s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(perception_layer)
+[29.414s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/package.ps1'
+[29.435s] INFO:colcon.colcon_core.shell:Creating package descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/package.dsv'
+[29.458s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/package.sh'
+[29.480s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/package.bash'
+[29.502s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/package.zsh'
+[29.521s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/colcon-core/packages/perception_layer)
+[29.538s] Level 1:colcon.colcon_core.shell:create_environment_hook('fault_handler', 'pythonpath_develop')
+[29.538s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/share/fault_handler/hook/pythonpath_develop.ps1'
+[29.552s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler' returned '0': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build --no-deps symlink_data --force
+[29.565s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/share/fault_handler/hook/pythonpath_develop.dsv'
+[29.587s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/share/fault_handler/hook/pythonpath_develop.sh'
+[29.611s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler' for CMake module files
+[29.703s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler' for CMake config files
+[29.858s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib'
+[29.865s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin'
+[29.877s] Level 1:colcon.colcon_core.shell:create_environment_hook('fault_handler', 'path')
+[29.878s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/hook/path.ps1'
+[29.907s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/hook/path.dsv'
+[29.936s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/hook/path.sh'
+[29.962s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/pkgconfig/fault_handler.pc'
+[29.966s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages'
+[29.971s] Level 1:colcon.colcon_core.shell:create_environment_hook('fault_handler', 'pythonpath')
+[29.971s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/hook/pythonpath.ps1'
+[30.000s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/hook/pythonpath.dsv'
+[30.029s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/hook/pythonpath.sh'
+[30.056s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin'
+[30.067s] Level 1:colcon.colcon_core.shell:create_environment_hook('fault_handler', 'pythonscriptspath')
+[30.068s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/hook/pythonscriptspath.ps1'
+[30.093s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/hook/pythonscriptspath.dsv'
+[30.121s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/hook/pythonscriptspath.sh'
+[30.153s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(fault_handler)
+[30.154s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/package.ps1'
+[30.178s] INFO:colcon.colcon_core.shell:Creating package descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/package.dsv'
+[30.200s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/package.sh'
+[30.224s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/package.bash'
+[30.250s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/package.zsh'
+[30.274s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/colcon-core/packages/fault_handler)
+[30.292s] Level 1:colcon.colcon_core.shell:create_environment_hook('drone_bringup', 'pythonpath_develop')
+[30.292s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/share/drone_bringup/hook/pythonpath_develop.ps1'
+[30.307s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup' returned '0': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/build --no-deps symlink_data --force
+[30.317s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/share/drone_bringup/hook/pythonpath_develop.dsv'
+[30.342s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/share/drone_bringup/hook/pythonpath_develop.sh'
+[30.368s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup' for CMake module files
+[30.481s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup' for CMake config files
+[30.693s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib'
+[30.702s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/bin'
+[30.705s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/pkgconfig/drone_bringup.pc'
+[30.708s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages'
+[30.715s] Level 1:colcon.colcon_core.shell:create_environment_hook('drone_bringup', 'pythonpath')
+[30.715s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/hook/pythonpath.ps1'
+[30.741s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/hook/pythonpath.dsv'
+[30.768s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/hook/pythonpath.sh'
+[30.798s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/bin'
+[30.801s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(drone_bringup)
+[30.801s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/package.ps1'
+[30.826s] INFO:colcon.colcon_core.shell:Creating package descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/package.dsv'
+[30.849s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/package.sh'
+[30.869s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/package.bash'
+[30.894s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/package.zsh'
+[30.919s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/colcon-core/packages/drone_bringup)
+[42.907s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy /usr/bin/cmake /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/slam_layer -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer
+[42.925s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy /usr/bin/cmake --build /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer -- -j16 -l16
+[43.138s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy /usr/bin/cmake --build /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer -- -j16 -l16
+[43.179s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy /usr/bin/cmake --install /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer
+[44.221s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(slam_layer)
+[44.221s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer' for CMake module files
+[44.222s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy /usr/bin/cmake --install /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer
+[44.429s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer' for CMake config files
+[44.636s] Level 1:colcon.colcon_core.shell:create_environment_hook('slam_layer', 'cmake_prefix_path')
+[44.637s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/hook/cmake_prefix_path.ps1'
+[44.666s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/hook/cmake_prefix_path.dsv'
+[44.692s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/hook/cmake_prefix_path.sh'
+[44.727s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/bin'
+[44.730s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/lib/pkgconfig/slam_layer.pc'
+[44.732s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/lib/python3.12/site-packages'
+[44.735s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/bin'
+[44.737s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/package.ps1'
+[44.760s] INFO:colcon.colcon_core.shell:Creating package descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/package.dsv'
+[44.791s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/package.sh'
+[44.816s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/package.bash'
+[44.841s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/package.zsh'
+[44.866s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/colcon-core/packages/slam_layer)
+[44.919s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(slam_layer)
+[44.920s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer' for CMake module files
+[45.122s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer' for CMake config files
+[45.328s] Level 1:colcon.colcon_core.shell:create_environment_hook('slam_layer', 'cmake_prefix_path')
+[45.328s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/hook/cmake_prefix_path.ps1'
+[45.359s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/hook/cmake_prefix_path.dsv'
+[45.389s] INFO:colcon.colcon_core.shell:Creating environment hook '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/hook/cmake_prefix_path.sh'
+[45.425s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/bin'
+[45.428s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/lib/pkgconfig/slam_layer.pc'
+[45.431s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/lib/python3.12/site-packages'
+[45.433s] Level 1:colcon.colcon_core.environment:checking '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/bin'
+[45.436s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/package.ps1'
+[45.460s] INFO:colcon.colcon_core.shell:Creating package descriptor '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/package.dsv'
+[45.485s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/package.sh'
+[45.509s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/package.bash'
+[45.535s] INFO:colcon.colcon_core.shell:Creating package script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/package.zsh'
+[45.558s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/colcon-core/packages/slam_layer)
+[45.578s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[45.578s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[45.579s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[45.580s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[45.826s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[45.827s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[45.827s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[45.827s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[45.830s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[45.831s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[45.831s] INFO:colcon.colcon_core.shell:Creating prefix script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/local_setup.ps1'
+[45.842s] INFO:colcon.colcon_core.shell:Creating prefix util module '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/_local_setup_util_ps1.py'
+[45.853s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/setup.ps1'
+[45.963s] INFO:colcon.colcon_core.shell:Creating prefix script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/local_setup.sh'
+[45.974s] INFO:colcon.colcon_core.shell:Creating prefix util module '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/_local_setup_util_sh.py'
+[45.984s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/setup.sh'
+[46.093s] INFO:colcon.colcon_core.shell:Creating prefix script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/local_setup.bash'
+[46.104s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/setup.bash'
+[46.211s] INFO:colcon.colcon_core.shell:Creating prefix script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/local_setup.zsh'
+[46.222s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/setup.zsh'

@@ -1,0 +1,17 @@
+[5.407s] Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/build --no-deps symlink_data
+[6.935s] running develop
+[7.559s] running egg_info
+[7.599s] writing telemetry.egg-info/PKG-INFO
+[7.616s] writing dependency_links to telemetry.egg-info/dependency_links.txt
+[7.625s] writing entry points to telemetry.egg-info/entry_points.txt
+[7.634s] writing requirements to telemetry.egg-info/requires.txt
+[7.643s] writing top-level names to telemetry.egg-info/top_level.txt
+[7.824s] reading manifest file 'telemetry.egg-info/SOURCES.txt'
+[7.979s] writing manifest file 'telemetry.egg-info/SOURCES.txt'
+[8.043s] running build_ext
+[8.044s] Creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages/telemetry.egg-link (link to .)
+[8.090s] Installing dashboard_node script to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin
+[8.126s] 
+[8.128s] Installed /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry
+[8.133s] running symlink_data
+[10.110s] Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry' returned '0': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/build --no-deps symlink_data

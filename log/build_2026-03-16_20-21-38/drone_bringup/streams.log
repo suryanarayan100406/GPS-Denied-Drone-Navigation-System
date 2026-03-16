@@ -1,0 +1,28 @@
+[5.430s] Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/build --no-deps symlink_data
+[6.932s] running develop
+[7.520s] running egg_info
+[7.522s] creating drone_bringup.egg-info
+[7.560s] writing drone_bringup.egg-info/PKG-INFO
+[7.575s] writing dependency_links to drone_bringup.egg-info/dependency_links.txt
+[7.586s] writing requirements to drone_bringup.egg-info/requires.txt
+[7.592s] writing top-level names to drone_bringup.egg-info/top_level.txt
+[7.600s] writing manifest file 'drone_bringup.egg-info/SOURCES.txt'
+[7.813s] reading manifest file 'drone_bringup.egg-info/SOURCES.txt'
+[7.928s] writing manifest file 'drone_bringup.egg-info/SOURCES.txt'
+[7.993s] running build_ext
+[7.995s] Creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages/drone-bringup.egg-link (link to .)
+[8.044s] 
+[8.046s] Installed /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup
+[8.052s] running symlink_data
+[8.066s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/ament_index
+[8.073s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/ament_index/resource_index
+[8.081s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/ament_index/resource_index/packages
+[8.116s] symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/resource/drone_bringup -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/ament_index/resource_index/packages
+[8.152s] symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/package.xml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup
+[8.170s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/launch
+[8.201s] symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/launch/master_launch.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/launch
+[8.229s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/urdf
+[8.259s] symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/urdf/mavic_webots.urdf -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/urdf
+[8.279s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/worlds
+[8.310s] symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/worlds/tunnel_world.wbt -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/worlds
+[9.166s] Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup' returned '0': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/build --no-deps symlink_data

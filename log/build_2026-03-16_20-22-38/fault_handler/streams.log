@@ -1,0 +1,37 @@
+[5.489s] Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build
+[6.949s] running develop
+[7.642s] Removing /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages/fault-handler.egg-link (link to .)
+[7.759s] Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler' returned '0': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build
+[7.773s] Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/fault_handler': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/fault_handler build --build-base /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build install --record /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/install.log --single-version-externally-managed install_data --force
+[9.129s] running egg_info
+[9.176s] writing ../../build/fault_handler/fault_handler.egg-info/PKG-INFO
+[9.191s] writing dependency_links to ../../build/fault_handler/fault_handler.egg-info/dependency_links.txt
+[9.200s] writing entry points to ../../build/fault_handler/fault_handler.egg-info/entry_points.txt
+[9.210s] writing requirements to ../../build/fault_handler/fault_handler.egg-info/requires.txt
+[9.218s] writing top-level names to ../../build/fault_handler/fault_handler.egg-info/top_level.txt
+[9.356s] reading manifest file '../../build/fault_handler/fault_handler.egg-info/SOURCES.txt'
+[9.484s] writing manifest file '../../build/fault_handler/fault_handler.egg-info/SOURCES.txt'
+[9.491s] running build
+[9.493s] running build_py
+[9.503s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build
+[9.509s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build/lib
+[9.511s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build/lib/fault_handler
+[9.533s] copying fault_handler/watchdog_node.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build/lib/fault_handler
+[9.589s] copying fault_handler/__init__.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build/lib/fault_handler
+[9.624s] running install
+[9.647s] running install_lib
+[9.731s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages/fault_handler
+[9.775s] copying /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build/lib/fault_handler/watchdog_node.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages/fault_handler
+[9.863s] copying /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build/lib/fault_handler/__init__.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages/fault_handler
+[9.949s] byte-compiling /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages/fault_handler/watchdog_node.py to watchdog_node.cpython-312.pyc
+[10.054s] byte-compiling /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages/fault_handler/__init__.py to __init__.cpython-312.pyc
+[10.146s] running install_data
+[10.167s] copying resource/fault_handler -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/ament_index/resource_index/packages
+[10.222s] copying package.xml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler
+[10.269s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler/launch
+[10.277s] running install_egg_info
+[10.372s] Copying ../../build/fault_handler/fault_handler.egg-info to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages/fault_handler-0.0.0-py3.12.egg-info
+[11.020s] running install_scripts
+[11.565s] Installing watchdog_node script to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin
+[11.586s] writing list of installed files to '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/install.log'
+[12.081s] Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/fault_handler' returned '0': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/fault_handler build --build-base /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build install --record /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/install.log --single-version-externally-managed install_data --force

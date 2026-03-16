@@ -1,0 +1,665 @@
+[0.000000] (-) TimerEvent: {}
+[0.000823] (control_layer) JobQueued: {'identifier': 'control_layer', 'dependencies': OrderedDict()}
+[0.001237] (drone_bringup) JobQueued: {'identifier': 'drone_bringup', 'dependencies': OrderedDict()}
+[0.001625] (fault_handler) JobQueued: {'identifier': 'fault_handler', 'dependencies': OrderedDict()}
+[0.001982] (navigation_layer) JobQueued: {'identifier': 'navigation_layer', 'dependencies': OrderedDict()}
+[0.002319] (perception_layer) JobQueued: {'identifier': 'perception_layer', 'dependencies': OrderedDict()}
+[0.002699] (slam_layer) JobQueued: {'identifier': 'slam_layer', 'dependencies': OrderedDict()}
+[0.002982] (telemetry) JobQueued: {'identifier': 'telemetry', 'dependencies': OrderedDict()}
+[0.003420] (control_layer) JobStarted: {'identifier': 'control_layer'}
+[0.104683] (-) TimerEvent: {}
+[0.215391] (-) TimerEvent: {}
+[0.296143] (drone_bringup) JobStarted: {'identifier': 'drone_bringup'}
+[0.315597] (-) TimerEvent: {}
+[0.419144] (-) TimerEvent: {}
+[0.529414] (-) TimerEvent: {}
+[0.620638] (fault_handler) JobStarted: {'identifier': 'fault_handler'}
+[0.629861] (-) TimerEvent: {}
+[0.735983] (-) TimerEvent: {}
+[0.846881] (-) TimerEvent: {}
+[0.947146] (navigation_layer) JobStarted: {'identifier': 'navigation_layer'}
+[0.947849] (-) TimerEvent: {}
+[1.058679] (-) TimerEvent: {}
+[1.169349] (-) TimerEvent: {}
+[1.272250] (perception_layer) JobStarted: {'identifier': 'perception_layer'}
+[1.272924] (-) TimerEvent: {}
+[1.381340] (-) TimerEvent: {}
+[1.492071] (-) TimerEvent: {}
+[1.592540] (slam_layer) JobStarted: {'identifier': 'slam_layer'}
+[1.593197] (-) TimerEvent: {}
+[1.704107] (-) TimerEvent: {}
+[1.814848] (-) TimerEvent: {}
+[1.822441] (telemetry) JobStarted: {'identifier': 'telemetry'}
+[1.924138] (-) TimerEvent: {}
+[2.034886] (-) TimerEvent: {}
+[2.145691] (-) TimerEvent: {}
+[2.161278] (control_layer) JobProgress: {'identifier': 'control_layer', 'progress': 'cmake'}
+[2.224831] (control_layer) Command: {'cmd': ['/usr/bin/cmake', '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/control_layer', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer'], 'cwd': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer', 'env': OrderedDict({'USER': 'lenovo', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/lenovo', 'OLDPWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'lenovo', 'NAME': 'LAPTOP-MLDMFMJ8', 'WSL_INTEROP': '/run/WSL/20320_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python314/Scripts/:/mnt/c/Python314/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/src/flutter/bin:/mnt/c/MinGW/bin:/mnt/c/Users/LENOVO/AppData/Local/Pub/Cache/bin:/mnt/c/ffmpeg-8.0.1-essentials_build/bin:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/LENOVO/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/LENOVO/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.17.10-hotspot/bin:/mnt/c/Users/LENOVO/AppData/Local/Python/bin:/mnt/c/Users/LENOVO/AppData/Roaming/npm:/mnt/c/Users/LENOVO/AppData/Local/Programs/Antigravity/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer', 'PYTHONPATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy', 'WSLENV': ''}), 'shell': False}
+[2.245983] (-) TimerEvent: {}
+[2.356596] (-) TimerEvent: {}
+[2.467299] (-) TimerEvent: {}
+[2.577914] (-) TimerEvent: {}
+[2.688852] (-) TimerEvent: {}
+[2.799420] (-) TimerEvent: {}
+[2.910242] (-) TimerEvent: {}
+[3.020989] (-) TimerEvent: {}
+[3.131600] (-) TimerEvent: {}
+[3.242400] (-) TimerEvent: {}
+[3.349845] (-) TimerEvent: {}
+[3.460504] (-) TimerEvent: {}
+[3.571262] (-) TimerEvent: {}
+[3.672166] (-) TimerEvent: {}
+[3.780522] (-) TimerEvent: {}
+[3.891292] (-) TimerEvent: {}
+[3.999232] (-) TimerEvent: {}
+[4.110124] (-) TimerEvent: {}
+[4.220992] (-) TimerEvent: {}
+[4.331696] (-) TimerEvent: {}
+[4.433846] (-) TimerEvent: {}
+[4.544744] (-) TimerEvent: {}
+[4.655326] (-) TimerEvent: {}
+[4.765763] (-) TimerEvent: {}
+[4.876480] (-) TimerEvent: {}
+[4.987095] (-) TimerEvent: {}
+[5.097887] (-) TimerEvent: {}
+[5.208745] (-) TimerEvent: {}
+[5.319560] (-) TimerEvent: {}
+[5.422339] (-) TimerEvent: {}
+[5.532983] (-) TimerEvent: {}
+[5.643664] (-) TimerEvent: {}
+[5.754563] (-) TimerEvent: {}
+[5.864924] (-) TimerEvent: {}
+[5.975659] (-) TimerEvent: {}
+[6.086364] (-) TimerEvent: {}
+[6.197008] (-) TimerEvent: {}
+[6.307695] (-) TimerEvent: {}
+[6.409647] (-) TimerEvent: {}
+[6.520453] (-) TimerEvent: {}
+[6.631508] (-) TimerEvent: {}
+[6.737686] (-) TimerEvent: {}
+[6.848480] (-) TimerEvent: {}
+[6.949345] (-) TimerEvent: {}
+[7.050347] (-) TimerEvent: {}
+[7.150946] (-) TimerEvent: {}
+[7.260172] (-) TimerEvent: {}
+[7.370877] (-) TimerEvent: {}
+[7.474951] (-) TimerEvent: {}
+[7.585594] (-) TimerEvent: {}
+[7.696414] (-) TimerEvent: {}
+[7.799250] (-) TimerEvent: {}
+[7.908526] (-) TimerEvent: {}
+[8.018047] (-) TimerEvent: {}
+[8.128807] (-) TimerEvent: {}
+[8.239632] (-) TimerEvent: {}
+[8.350466] (-) TimerEvent: {}
+[8.457950] (-) TimerEvent: {}
+[8.559127] (-) TimerEvent: {}
+[8.669855] (-) TimerEvent: {}
+[8.780702] (-) TimerEvent: {}
+[8.891483] (-) TimerEvent: {}
+[9.002083] (-) TimerEvent: {}
+[9.103306] (-) TimerEvent: {}
+[9.214102] (-) TimerEvent: {}
+[9.324764] (-) TimerEvent: {}
+[9.435581] (-) TimerEvent: {}
+[9.546450] (-) TimerEvent: {}
+[9.649314] (-) TimerEvent: {}
+[9.760353] (-) TimerEvent: {}
+[9.871018] (-) TimerEvent: {}
+[9.981747] (-) TimerEvent: {}
+[10.092500] (-) TimerEvent: {}
+[10.203379] (-) TimerEvent: {}
+[10.314210] (-) TimerEvent: {}
+[10.424919] (-) TimerEvent: {}
+[10.535554] (-) TimerEvent: {}
+[10.646537] (-) TimerEvent: {}
+[10.756863] (-) TimerEvent: {}
+[10.867876] (-) TimerEvent: {}
+[10.978561] (-) TimerEvent: {}
+[11.089373] (-) TimerEvent: {}
+[11.200174] (-) TimerEvent: {}
+[11.310891] (-) TimerEvent: {}
+[11.411956] (-) TimerEvent: {}
+[11.512985] (-) TimerEvent: {}
+[11.613934] (-) TimerEvent: {}
+[11.716431] (-) TimerEvent: {}
+[11.827046] (-) TimerEvent: {}
+[11.928810] (-) TimerEvent: {}
+[12.029736] (-) TimerEvent: {}
+[12.134477] (-) TimerEvent: {}
+[12.245197] (-) TimerEvent: {}
+[12.346425] (-) TimerEvent: {}
+[12.447130] (-) TimerEvent: {}
+[12.548008] (-) TimerEvent: {}
+[12.656194] (-) TimerEvent: {}
+[12.764319] (-) TimerEvent: {}
+[12.874460] (-) TimerEvent: {}
+[12.985262] (-) TimerEvent: {}
+[13.095992] (-) TimerEvent: {}
+[13.198705] (-) TimerEvent: {}
+[13.309390] (-) TimerEvent: {}
+[13.420134] (-) TimerEvent: {}
+[13.530302] (-) TimerEvent: {}
+[13.641155] (-) TimerEvent: {}
+[13.742060] (-) TimerEvent: {}
+[13.850535] (-) TimerEvent: {}
+[13.905484] (slam_layer) JobProgress: {'identifier': 'slam_layer', 'progress': 'cmake'}
+[13.955144] (-) TimerEvent: {}
+[13.958883] (slam_layer) Command: {'cmd': ['/usr/bin/cmake', '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/slam_layer', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer'], 'cwd': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer', 'env': OrderedDict({'USER': 'lenovo', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/lenovo', 'OLDPWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'lenovo', 'NAME': 'LAPTOP-MLDMFMJ8', 'WSL_INTEROP': '/run/WSL/20320_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python314/Scripts/:/mnt/c/Python314/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/src/flutter/bin:/mnt/c/MinGW/bin:/mnt/c/Users/LENOVO/AppData/Local/Pub/Cache/bin:/mnt/c/ffmpeg-8.0.1-essentials_build/bin:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/LENOVO/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/LENOVO/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.17.10-hotspot/bin:/mnt/c/Users/LENOVO/AppData/Local/Python/bin:/mnt/c/Users/LENOVO/AppData/Roaming/npm:/mnt/c/Users/LENOVO/AppData/Local/Programs/Antigravity/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer', 'PYTHONPATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy', 'WSLENV': ''}), 'shell': False}
+[13.984017] (control_layer) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[13.985988] (control_layer) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[13.987161] (control_layer) StdoutLine: {'line': b'-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[13.988250] (control_layer) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[13.989438] (control_layer) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[13.990671] (control_layer) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[13.992172] (control_layer) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[13.994254] (control_layer) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[13.995814] (control_layer) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[13.997593] (control_layer) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[13.999090] (control_layer) StdoutLine: {'line': b'-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[14.000400] (control_layer) StdoutLine: {'line': b'-- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)\n'}
+[14.002153] (control_layer) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[14.003831] (control_layer) StdoutLine: {'line': b'-- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)\n'}
+[14.005416] (control_layer) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[14.006754] (control_layer) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[14.008353] (control_layer) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[14.009940] (control_layer) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/control_layer/include>\n'}
+[14.011500] (control_layer) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[14.013103] (control_layer) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[14.014731] (control_layer) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[14.016239] (control_layer) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[14.059039] (-) TimerEvent: {}
+[14.119933] (slam_layer) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[14.162886] (-) TimerEvent: {}
+[14.273643] (-) TimerEvent: {}
+[14.285519] (control_layer) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[14.287304] (control_layer) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[14.348950] (control_layer) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[14.376086] (-) TimerEvent: {}
+[14.486769] (-) TimerEvent: {}
+[14.536273] (control_layer) StdoutLine: {'line': b'-- Configuring done (12.1s)\n'}
+[14.591826] (-) TimerEvent: {}
+[14.702549] (-) TimerEvent: {}
+[14.808584] (-) TimerEvent: {}
+[14.919339] (-) TimerEvent: {}
+[15.019975] (-) TimerEvent: {}
+[15.130855] (-) TimerEvent: {}
+[15.241570] (-) TimerEvent: {}
+[15.343494] (-) TimerEvent: {}
+[15.454124] (-) TimerEvent: {}
+[15.504402] (control_layer) StdoutLine: {'line': b'-- Generating done (0.8s)\n'}
+[15.559092] (-) TimerEvent: {}
+[15.669558] (-) TimerEvent: {}
+[15.780433] (-) TimerEvent: {}
+[15.891084] (-) TimerEvent: {}
+[15.990505] (control_layer) StdoutLine: {'line': b'-- Build files have been written to: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer\n'}
+[15.991877] (-) TimerEvent: {}
+[16.102548] (-) TimerEvent: {}
+[16.213304] (-) TimerEvent: {}
+[16.323987] (-) TimerEvent: {}
+[16.434764] (-) TimerEvent: {}
+[16.545383] (-) TimerEvent: {}
+[16.656181] (-) TimerEvent: {}
+[16.681715] (control_layer) CommandEnded: {'returncode': 0}
+[16.690524] (control_layer) JobProgress: {'identifier': 'control_layer', 'progress': 'build'}
+[16.698678] (control_layer) Command: {'cmd': ['/usr/bin/cmake', '--build', '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer', '--', '-j16', '-l16'], 'cwd': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer', 'env': OrderedDict({'USER': 'lenovo', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/lenovo', 'OLDPWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'lenovo', 'NAME': 'LAPTOP-MLDMFMJ8', 'WSL_INTEROP': '/run/WSL/20320_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python314/Scripts/:/mnt/c/Python314/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/src/flutter/bin:/mnt/c/MinGW/bin:/mnt/c/Users/LENOVO/AppData/Local/Pub/Cache/bin:/mnt/c/ffmpeg-8.0.1-essentials_build/bin:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/LENOVO/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/LENOVO/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.17.10-hotspot/bin:/mnt/c/Users/LENOVO/AppData/Local/Python/bin:/mnt/c/Users/LENOVO/AppData/Roaming/npm:/mnt/c/Users/LENOVO/AppData/Local/Programs/Antigravity/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer', 'PYTHONPATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy', 'WSLENV': ''}), 'shell': False}
+[16.756448] (-) TimerEvent: {}
+[16.857671] (-) TimerEvent: {}
+[16.959003] (-) TimerEvent: {}
+[17.059948] (-) TimerEvent: {}
+[17.161109] (-) TimerEvent: {}
+[17.272074] (-) TimerEvent: {}
+[17.382967] (-) TimerEvent: {}
+[17.493889] (-) TimerEvent: {}
+[17.605221] (-) TimerEvent: {}
+[17.715996] (-) TimerEvent: {}
+[17.826752] (-) TimerEvent: {}
+[17.937460] (-) TimerEvent: {}
+[18.048058] (control_layer) StdoutLine: {'line': b'[ 50%] Built target motor_mixer\n'}
+[18.049830] (-) TimerEvent: {}
+[18.082384] (control_layer) StdoutLine: {'line': b'[100%] Built target pid_controller\n'}
+[18.152981] (control_layer) CommandEnded: {'returncode': 0}
+[18.155227] (-) TimerEvent: {}
+[18.185212] (control_layer) JobProgress: {'identifier': 'control_layer', 'progress': 'install'}
+[18.209294] (control_layer) Command: {'cmd': ['/usr/bin/cmake', '--install', '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer'], 'cwd': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer', 'env': OrderedDict({'USER': 'lenovo', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/lenovo', 'OLDPWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'lenovo', 'NAME': 'LAPTOP-MLDMFMJ8', 'WSL_INTEROP': '/run/WSL/20320_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python314/Scripts/:/mnt/c/Python314/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/src/flutter/bin:/mnt/c/MinGW/bin:/mnt/c/Users/LENOVO/AppData/Local/Pub/Cache/bin:/mnt/c/ffmpeg-8.0.1-essentials_build/bin:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/LENOVO/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/LENOVO/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.17.10-hotspot/bin:/mnt/c/Users/LENOVO/AppData/Local/Python/bin:/mnt/c/Users/LENOVO/AppData/Roaming/npm:/mnt/c/Users/LENOVO/AppData/Local/Programs/Antigravity/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer', 'PYTHONPATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy', 'WSLENV': ''}), 'shell': False}
+[18.230346] (control_layer) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[18.250987] (control_layer) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[18.255604] (-) TimerEvent: {}
+[18.288571] (slam_layer) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[18.295993] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/lib/control_layer/pid_controller\n'}
+[18.330838] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/lib/control_layer/motor_mixer\n'}
+[18.358092] (-) TimerEvent: {}
+[18.462057] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/ament_index/resource_index/package_run_dependencies/control_layer\n'}
+[18.464097] (-) TimerEvent: {}
+[18.555646] (slam_layer) StdoutLine: {'line': b'-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[18.564898] (-) TimerEvent: {}
+[18.571138] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/ament_index/resource_index/parent_prefix_path/control_layer\n'}
+[18.605693] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/environment/ament_prefix_path.sh\n'}
+[18.654117] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/environment/ament_prefix_path.dsv\n'}
+[18.665974] (-) TimerEvent: {}
+[18.689879] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/environment/path.sh\n'}
+[18.737773] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/environment/path.dsv\n'}
+[18.768696] (-) TimerEvent: {}
+[18.778165] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/local_setup.bash\n'}
+[18.815256] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/local_setup.sh\n'}
+[18.854377] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/local_setup.zsh\n'}
+[18.870104] (-) TimerEvent: {}
+[18.896063] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/local_setup.dsv\n'}
+[18.913856] (control_layer) StdoutLine: {'line': b'-- Symlinking: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/package.dsv\n'}
+[18.975722] (-) TimerEvent: {}
+[19.063275] (slam_layer) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[19.065267] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/ament_index/resource_index/packages/control_layer\n'}
+[19.076791] (-) TimerEvent: {}
+[19.113946] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/cmake/control_layerConfig.cmake\n'}
+[19.138851] (slam_layer) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[19.155106] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/cmake/control_layerConfig-version.cmake\n'}
+[19.178953] (-) TimerEvent: {}
+[19.195514] (control_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer/share/control_layer/package.xml\n'}
+[19.205184] (control_layer) CommandEnded: {'returncode': 0}
+[19.251307] (slam_layer) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[19.279892] (-) TimerEvent: {}
+[19.380690] (-) TimerEvent: {}
+[19.387543] (slam_layer) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[19.481512] (-) TimerEvent: {}
+[19.592440] (-) TimerEvent: {}
+[19.699716] (slam_layer) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[19.701110] (-) TimerEvent: {}
+[19.751434] (slam_layer) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[19.803118] (-) TimerEvent: {}
+[19.913891] (-) TimerEvent: {}
+[20.024278] (-) TimerEvent: {}
+[20.135208] (-) TimerEvent: {}
+[20.245927] (-) TimerEvent: {}
+[20.356504] (-) TimerEvent: {}
+[20.467242] (-) TimerEvent: {}
+[20.577916] (-) TimerEvent: {}
+[20.587851] (control_layer) JobEnded: {'identifier': 'control_layer', 'rc': 0}
+[20.601639] (slam_layer) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[20.683555] (-) TimerEvent: {}
+[20.794263] (-) TimerEvent: {}
+[20.905463] (-) TimerEvent: {}
+[21.016093] (-) TimerEvent: {}
+[21.126826] (-) TimerEvent: {}
+[21.154821] (slam_layer) StdoutLine: {'line': b'-- Found slam_toolbox: 2.8.3 (/opt/ros/jazzy/share/slam_toolbox/cmake)\n'}
+[21.227035] (-) TimerEvent: {}
+[21.327830] (-) TimerEvent: {}
+[21.429017] (-) TimerEvent: {}
+[21.539574] (-) TimerEvent: {}
+[21.650380] (-) TimerEvent: {}
+[21.754029] (-) TimerEvent: {}
+[21.864713] (-) TimerEvent: {}
+[21.920107] (slam_layer) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)\n'}
+[21.931182] (slam_layer) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[21.965008] (-) TimerEvent: {}
+[21.999362] (navigation_layer) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/build', '--no-deps', 'symlink_data', '--force'], 'cwd': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer', 'env': {'USER': 'lenovo', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/lenovo', 'OLDPWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'lenovo', 'NAME': 'LAPTOP-MLDMFMJ8', 'WSL_INTEROP': '/run/WSL/20320_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python314/Scripts/:/mnt/c/Python314/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/src/flutter/bin:/mnt/c/MinGW/bin:/mnt/c/Users/LENOVO/AppData/Local/Pub/Cache/bin:/mnt/c/ffmpeg-8.0.1-essentials_build/bin:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/LENOVO/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/LENOVO/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.17.10-hotspot/bin:/mnt/c/Users/LENOVO/AppData/Local/Python/bin:/mnt/c/Users/LENOVO/AppData/Roaming/npm:/mnt/c/Users/LENOVO/AppData/Local/Programs/Antigravity/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer', 'PYTHONPATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WSLENV': ''}, 'shell': False}
+[22.065382] (-) TimerEvent: {}
+[22.166456] (-) TimerEvent: {}
+[22.267340] (-) TimerEvent: {}
+[22.364785] (telemetry) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/build', '--no-deps', 'symlink_data', '--force'], 'cwd': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry', 'env': {'USER': 'lenovo', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/lenovo', 'OLDPWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'lenovo', 'NAME': 'LAPTOP-MLDMFMJ8', 'WSL_INTEROP': '/run/WSL/20320_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python314/Scripts/:/mnt/c/Python314/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/src/flutter/bin:/mnt/c/MinGW/bin:/mnt/c/Users/LENOVO/AppData/Local/Pub/Cache/bin:/mnt/c/ffmpeg-8.0.1-essentials_build/bin:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/LENOVO/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/LENOVO/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.17.10-hotspot/bin:/mnt/c/Users/LENOVO/AppData/Local/Python/bin:/mnt/c/Users/LENOVO/AppData/Roaming/npm:/mnt/c/Users/LENOVO/AppData/Local/Programs/Antigravity/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry', 'PYTHONPATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WSLENV': ''}, 'shell': False}
+[22.384936] (-) TimerEvent: {}
+[22.494758] (-) TimerEvent: {}
+[22.506725] (slam_layer) StdoutLine: {'line': b"-- Setting OGRE_DIR to: '/opt/ros/jazzy/share/rviz_ogre_vendor/cmake/../../../opt/rviz_ogre_vendor/lib/OGRE/cmake'\n"}
+[22.514691] (slam_layer) StdoutLine: {'line': b'-- Found OGRE\n'}
+[22.515986] (slam_layer) StdoutLine: {'line': b'--   static     : OFF\n'}
+[22.517131] (slam_layer) StdoutLine: {'line': b'--   components : MeshLodGenerator;Overlay;Paging;Property;RTShaderSystem;Terrain;Volume\n'}
+[22.518634] (slam_layer) StdoutLine: {'line': b'--   plugins    : Plugin_BSPSceneManager;Plugin_OctreeSceneManager;Plugin_PCZSceneManager;Plugin_ParticleFX;RenderSystem_GL;RenderSystem_GL3Plus;Codec_STBI\n'}
+[22.520102] (slam_layer) StdoutLine: {'line': b'--   media      : /opt/ros/jazzy/opt/rviz_ogre_vendor/share/OGRE/Media\n'}
+[22.521846] (slam_layer) StdoutLine: {'line': b'-- OGRE_LIBRARIES: OgreMeshLodGenerator;OgreOverlay;OgrePaging;OgreProperty;OgreRTShaderSystem;OgreTerrain;OgreVolume;OgreMain\n'}
+[22.523346] (slam_layer) StdoutLine: {'line': b'-- OGRE_LIBRARY_DIRS: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib\n'}
+[22.524907] (slam_layer) StdoutLine: {'line': b'-- OGRE_PLUGINS: Plugin_BSPSceneManager;Plugin_OctreeSceneManager;Plugin_PCZSceneManager;Plugin_ParticleFX;RenderSystem_GL;RenderSystem_GL3Plus;Codec_STBI\n'}
+[22.526371] (slam_layer) StdoutLine: {'line': b'-- OGRE_PLUGIN_DIR: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/OGRE\n'}
+[22.527953] (slam_layer) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreOverlay for IMPORTED_LOCATION_RELEASE: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreOverlay.so\n'}
+[22.529694] (slam_layer) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreOverlay for IMPORTED_LOCATION_DEBUG: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreOverlay.so\n'}
+[22.531420] (slam_layer) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreMain for IMPORTED_LOCATION_RELEASE: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreMain.so\n'}
+[22.532904] (slam_layer) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreMain for IMPORTED_LOCATION_DEBUG: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreMain.so\n'}
+[22.595348] (-) TimerEvent: {}
+[22.641818] (slam_layer) StdoutLine: {'line': b'-- Could not find freeimage library\n'}
+[22.695526] (-) TimerEvent: {}
+[22.806253] (-) TimerEvent: {}
+[22.821759] (perception_layer) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/build', '--no-deps', 'symlink_data', '--force'], 'cwd': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer', 'env': {'USER': 'lenovo', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/lenovo', 'OLDPWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'lenovo', 'NAME': 'LAPTOP-MLDMFMJ8', 'WSL_INTEROP': '/run/WSL/20320_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python314/Scripts/:/mnt/c/Python314/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/src/flutter/bin:/mnt/c/MinGW/bin:/mnt/c/Users/LENOVO/AppData/Local/Pub/Cache/bin:/mnt/c/ffmpeg-8.0.1-essentials_build/bin:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/LENOVO/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/LENOVO/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.17.10-hotspot/bin:/mnt/c/Users/LENOVO/AppData/Local/Python/bin:/mnt/c/Users/LENOVO/AppData/Roaming/npm:/mnt/c/Users/LENOVO/AppData/Local/Programs/Antigravity/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer', 'PYTHONPATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WSLENV': ''}, 'shell': False}
+[22.910126] (-) TimerEvent: {}
+[23.021044] (-) TimerEvent: {}
+[23.131649] (-) TimerEvent: {}
+[23.200224] (fault_handler) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build', '--no-deps', 'symlink_data', '--force'], 'cwd': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler', 'env': {'USER': 'lenovo', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/lenovo', 'OLDPWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'lenovo', 'NAME': 'LAPTOP-MLDMFMJ8', 'WSL_INTEROP': '/run/WSL/20320_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python314/Scripts/:/mnt/c/Python314/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/src/flutter/bin:/mnt/c/MinGW/bin:/mnt/c/Users/LENOVO/AppData/Local/Pub/Cache/bin:/mnt/c/ffmpeg-8.0.1-essentials_build/bin:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/LENOVO/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/LENOVO/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.17.10-hotspot/bin:/mnt/c/Users/LENOVO/AppData/Local/Python/bin:/mnt/c/Users/LENOVO/AppData/Roaming/npm:/mnt/c/Users/LENOVO/AppData/Local/Programs/Antigravity/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler', 'PYTHONPATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WSLENV': ''}, 'shell': False}
+[23.232703] (-) TimerEvent: {}
+[23.337827] (-) TimerEvent: {}
+[23.438938] (-) TimerEvent: {}
+[23.539762] (-) TimerEvent: {}
+[23.640953] (-) TimerEvent: {}
+[23.655302] (drone_bringup) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/build', '--no-deps', 'symlink_data', '--force'], 'cwd': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup', 'env': {'USER': 'lenovo', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/lenovo', 'OLDPWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'lenovo', 'NAME': 'LAPTOP-MLDMFMJ8', 'WSL_INTEROP': '/run/WSL/20320_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python314/Scripts/:/mnt/c/Python314/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/src/flutter/bin:/mnt/c/MinGW/bin:/mnt/c/Users/LENOVO/AppData/Local/Pub/Cache/bin:/mnt/c/ffmpeg-8.0.1-essentials_build/bin:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/LENOVO/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/LENOVO/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.17.10-hotspot/bin:/mnt/c/Users/LENOVO/AppData/Local/Python/bin:/mnt/c/Users/LENOVO/AppData/Roaming/npm:/mnt/c/Users/LENOVO/AppData/Local/Programs/Antigravity/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup', 'PYTHONPATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WSLENV': ''}, 'shell': False}
+[23.741316] (-) TimerEvent: {}
+[23.842440] (-) TimerEvent: {}
+[23.943217] (-) TimerEvent: {}
+[24.044931] (-) TimerEvent: {}
+[24.146257] (-) TimerEvent: {}
+[24.247524] (-) TimerEvent: {}
+[24.348872] (-) TimerEvent: {}
+[24.450238] (-) TimerEvent: {}
+[24.551038] (-) TimerEvent: {}
+[24.651707] (-) TimerEvent: {}
+[24.752408] (-) TimerEvent: {}
+[24.863215] (-) TimerEvent: {}
+[24.964019] (-) TimerEvent: {}
+[25.000974] (navigation_layer) StdoutLine: {'line': b'running develop\n'}
+[25.069429] (-) TimerEvent: {}
+[25.180271] (-) TimerEvent: {}
+[25.281311] (-) TimerEvent: {}
+[25.332298] (telemetry) StdoutLine: {'line': b'running develop\n'}
+[25.386135] (-) TimerEvent: {}
+[25.496948] (-) TimerEvent: {}
+[25.597921] (-) TimerEvent: {}
+[25.646928] (navigation_layer) StdoutLine: {'line': b'running egg_info\n'}
+[25.696399] (navigation_layer) StdoutLine: {'line': b'writing navigation_layer.egg-info/PKG-INFO\n'}
+[25.698141] (-) TimerEvent: {}
+[25.705543] (navigation_layer) StdoutLine: {'line': b'writing dependency_links to navigation_layer.egg-info/dependency_links.txt\n'}
+[25.711954] (navigation_layer) StdoutLine: {'line': b'writing entry points to navigation_layer.egg-info/entry_points.txt\n'}
+[25.719292] (navigation_layer) StdoutLine: {'line': b'writing requirements to navigation_layer.egg-info/requires.txt\n'}
+[25.726235] (navigation_layer) StdoutLine: {'line': b'writing top-level names to navigation_layer.egg-info/top_level.txt\n'}
+[25.774098] (perception_layer) StdoutLine: {'line': b'running develop\n'}
+[25.800574] (-) TimerEvent: {}
+[25.901566] (-) TimerEvent: {}
+[25.928680] (navigation_layer) StdoutLine: {'line': b"reading manifest file 'navigation_layer.egg-info/SOURCES.txt'\n"}
+[25.992939] (telemetry) StdoutLine: {'line': b'running egg_info\n'}
+[26.001988] (-) TimerEvent: {}
+[26.048604] (telemetry) StdoutLine: {'line': b'writing telemetry.egg-info/PKG-INFO\n'}
+[26.059324] (telemetry) StdoutLine: {'line': b'writing dependency_links to telemetry.egg-info/dependency_links.txt\n'}
+[26.066343] (telemetry) StdoutLine: {'line': b'writing entry points to telemetry.egg-info/entry_points.txt\n'}
+[26.073816] (telemetry) StdoutLine: {'line': b'writing requirements to telemetry.egg-info/requires.txt\n'}
+[26.079949] (telemetry) StdoutLine: {'line': b'writing top-level names to telemetry.egg-info/top_level.txt\n'}
+[26.104127] (-) TimerEvent: {}
+[26.106483] (navigation_layer) StdoutLine: {'line': b"writing manifest file 'navigation_layer.egg-info/SOURCES.txt'\n"}
+[26.182248] (fault_handler) StdoutLine: {'line': b'running develop\n'}
+[26.204380] (navigation_layer) StdoutLine: {'line': b'running build_ext\n'}
+[26.206882] (-) TimerEvent: {}
+[26.207510] (navigation_layer) StdoutLine: {'line': b'Creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages/navigation-layer.egg-link (link to .)\n'}
+[26.245870] (navigation_layer) StdoutLine: {'line': b'Installing navigation_status_node script to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin\n'}
+[26.275441] (navigation_layer) StdoutLine: {'line': b'\n'}
+[26.276799] (navigation_layer) StdoutLine: {'line': b'Installed /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer\n'}
+[26.280237] (telemetry) StdoutLine: {'line': b"reading manifest file 'telemetry.egg-info/SOURCES.txt'\n"}
+[26.283410] (navigation_layer) StdoutLine: {'line': b'running symlink_data\n'}
+[26.309254] (-) TimerEvent: {}
+[26.328555] (navigation_layer) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/resource/navigation_layer -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/ament_index/resource_index/packages\n'}
+[26.369112] (navigation_layer) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/package.xml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer\n'}
+[26.413218] (-) TimerEvent: {}
+[26.415564] (navigation_layer) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/config/costmap_params.yaml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/config\n'}
+[26.430796] (telemetry) StdoutLine: {'line': b"writing manifest file 'telemetry.egg-info/SOURCES.txt'\n"}
+[26.455010] (navigation_layer) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/config/nav2_params.yaml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/config\n'}
+[26.513633] (-) TimerEvent: {}
+[26.520358] (navigation_layer) CommandEnded: {'returncode': 0}
+[26.548010] (telemetry) StdoutLine: {'line': b'running build_ext\n'}
+[26.549897] (telemetry) StdoutLine: {'line': b'Creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages/telemetry.egg-link (link to .)\n'}
+[26.563807] (perception_layer) StdoutLine: {'line': b'running egg_info\n'}
+[26.595965] (telemetry) StdoutLine: {'line': b'Installing dashboard_node script to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin\n'}
+[26.614052] (-) TimerEvent: {}
+[26.622925] (telemetry) StdoutLine: {'line': b'\n'}
+[26.624974] (telemetry) StdoutLine: {'line': b'Installed /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry\n'}
+[26.628020] (perception_layer) StdoutLine: {'line': b'writing perception_layer.egg-info/PKG-INFO\n'}
+[26.631011] (telemetry) StdoutLine: {'line': b'running symlink_data\n'}
+[26.638400] (perception_layer) StdoutLine: {'line': b'writing dependency_links to perception_layer.egg-info/dependency_links.txt\n'}
+[26.646890] (perception_layer) StdoutLine: {'line': b'writing entry points to perception_layer.egg-info/entry_points.txt\n'}
+[26.655471] (perception_layer) StdoutLine: {'line': b'writing requirements to perception_layer.egg-info/requires.txt\n'}
+[26.662120] (perception_layer) StdoutLine: {'line': b'writing top-level names to perception_layer.egg-info/top_level.txt\n'}
+[26.679544] (telemetry) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/resource/telemetry -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/ament_index/resource_index/packages\n'}
+[26.717133] (telemetry) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/package.xml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry\n'}
+[26.718773] (-) TimerEvent: {}
+[26.825366] (drone_bringup) StdoutLine: {'line': b'running develop\n'}
+[26.827306] (-) TimerEvent: {}
+[26.872972] (perception_layer) StdoutLine: {'line': b"reading manifest file 'perception_layer.egg-info/SOURCES.txt'\n"}
+[26.932702] (-) TimerEvent: {}
+[27.033722] (-) TimerEvent: {}
+[27.040789] (fault_handler) StdoutLine: {'line': b'running egg_info\n'}
+[27.049068] (perception_layer) StdoutLine: {'line': b"writing manifest file 'perception_layer.egg-info/SOURCES.txt'\n"}
+[27.094403] (fault_handler) StdoutLine: {'line': b'writing fault_handler.egg-info/PKG-INFO\n'}
+[27.103382] (fault_handler) StdoutLine: {'line': b'writing dependency_links to fault_handler.egg-info/dependency_links.txt\n'}
+[27.110132] (fault_handler) StdoutLine: {'line': b'writing entry points to fault_handler.egg-info/entry_points.txt\n'}
+[27.117137] (fault_handler) StdoutLine: {'line': b'writing requirements to fault_handler.egg-info/requires.txt\n'}
+[27.122721] (fault_handler) StdoutLine: {'line': b'writing top-level names to fault_handler.egg-info/top_level.txt\n'}
+[27.134712] (-) TimerEvent: {}
+[27.172988] (perception_layer) StdoutLine: {'line': b'running build_ext\n'}
+[27.174838] (perception_layer) StdoutLine: {'line': b'Creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages/perception-layer.egg-link (link to .)\n'}
+[27.217069] (perception_layer) StdoutLine: {'line': b'Installing ekf_fusion_node script to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin\n'}
+[27.236466] (-) TimerEvent: {}
+[27.246962] (perception_layer) StdoutLine: {'line': b'Installing noise_injection_node script to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin\n'}
+[27.264057] (navigation_layer) JobEnded: {'identifier': 'navigation_layer', 'rc': 0}
+[27.279387] (telemetry) CommandEnded: {'returncode': 0}
+[27.282006] (perception_layer) StdoutLine: {'line': b'Installing sensor_health_monitor script to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin\n'}
+[27.310528] (perception_layer) StdoutLine: {'line': b'\n'}
+[27.312278] (perception_layer) StdoutLine: {'line': b'Installed /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer\n'}
+[27.317950] (perception_layer) StdoutLine: {'line': b'running symlink_data\n'}
+[27.320040] (fault_handler) StdoutLine: {'line': b"reading manifest file 'fault_handler.egg-info/SOURCES.txt'\n"}
+[27.338104] (-) TimerEvent: {}
+[27.367603] (perception_layer) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/resource/perception_layer -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/ament_index/resource_index/packages\n'}
+[27.407454] (perception_layer) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/package.xml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer\n'}
+[27.441129] (-) TimerEvent: {}
+[27.457588] (perception_layer) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/config/ekf_params.yaml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/config\n'}
+[27.474811] (fault_handler) StdoutLine: {'line': b"writing manifest file 'fault_handler.egg-info/SOURCES.txt'\n"}
+[27.541518] (-) TimerEvent: {}
+[27.584590] (fault_handler) StdoutLine: {'line': b'running build_ext\n'}
+[27.586243] (fault_handler) StdoutLine: {'line': b'Creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages/fault-handler.egg-link (link to .)\n'}
+[27.627392] (fault_handler) StdoutLine: {'line': b'Installing watchdog_node script to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin\n'}
+[27.642762] (-) TimerEvent: {}
+[27.661248] (fault_handler) StdoutLine: {'line': b'\n'}
+[27.662883] (fault_handler) StdoutLine: {'line': b'Installed /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler\n'}
+[27.668482] (fault_handler) StdoutLine: {'line': b'running symlink_data\n'}
+[27.712112] (fault_handler) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/resource/fault_handler -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/ament_index/resource_index/packages\n'}
+[27.742958] (-) TimerEvent: {}
+[27.750403] (fault_handler) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/package.xml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/share/fault_handler\n'}
+[27.835082] (drone_bringup) StdoutLine: {'line': b'running egg_info\n'}
+[27.843088] (-) TimerEvent: {}
+[27.895588] (drone_bringup) StdoutLine: {'line': b'writing drone_bringup.egg-info/PKG-INFO\n'}
+[27.904099] (drone_bringup) StdoutLine: {'line': b'writing dependency_links to drone_bringup.egg-info/dependency_links.txt\n'}
+[27.914203] (drone_bringup) StdoutLine: {'line': b'writing requirements to drone_bringup.egg-info/requires.txt\n'}
+[27.919136] (drone_bringup) StdoutLine: {'line': b'writing top-level names to drone_bringup.egg-info/top_level.txt\n'}
+[27.945163] (-) TimerEvent: {}
+[27.988844] (telemetry) JobEnded: {'identifier': 'telemetry', 'rc': 0}
+[28.001527] (perception_layer) CommandEnded: {'returncode': 0}
+[28.046329] (-) TimerEvent: {}
+[28.145105] (drone_bringup) StdoutLine: {'line': b"reading manifest file 'drone_bringup.egg-info/SOURCES.txt'\n"}
+[28.146625] (-) TimerEvent: {}
+[28.249860] (-) TimerEvent: {}
+[28.321800] (drone_bringup) StdoutLine: {'line': b"writing manifest file 'drone_bringup.egg-info/SOURCES.txt'\n"}
+[28.351100] (-) TimerEvent: {}
+[28.435485] (drone_bringup) StdoutLine: {'line': b'running build_ext\n'}
+[28.437014] (drone_bringup) StdoutLine: {'line': b'Creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages/drone-bringup.egg-link (link to .)\n'}
+[28.452460] (-) TimerEvent: {}
+[28.480558] (drone_bringup) StdoutLine: {'line': b'\n'}
+[28.482127] (drone_bringup) StdoutLine: {'line': b'Installed /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup\n'}
+[28.487387] (drone_bringup) StdoutLine: {'line': b'running symlink_data\n'}
+[28.529223] (drone_bringup) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/resource/drone_bringup -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/ament_index/resource_index/packages\n'}
+[28.554779] (-) TimerEvent: {}
+[28.567872] (drone_bringup) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/package.xml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup\n'}
+[28.611146] (drone_bringup) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/launch/master_launch.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/launch\n'}
+[28.655963] (drone_bringup) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/urdf/mavic_webots.urdf -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/urdf\n'}
+[28.657604] (-) TimerEvent: {}
+[28.700592] (drone_bringup) StdoutLine: {'line': b'symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/worlds/tunnel_world.wbt -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/worlds\n'}
+[28.739069] (perception_layer) JobEnded: {'identifier': 'perception_layer', 'rc': 0}
+[28.752013] (fault_handler) CommandEnded: {'returncode': 0}
+[28.758113] (-) TimerEvent: {}
+[28.866298] (-) TimerEvent: {}
+[28.970928] (-) TimerEvent: {}
+[29.075459] (-) TimerEvent: {}
+[29.179125] (-) TimerEvent: {}
+[29.289871] (-) TimerEvent: {}
+[29.400614] (-) TimerEvent: {}
+[29.492901] (fault_handler) JobEnded: {'identifier': 'fault_handler', 'rc': 0}
+[29.504457] (-) TimerEvent: {}
+[29.504876] (drone_bringup) CommandEnded: {'returncode': 0}
+[29.611589] (-) TimerEvent: {}
+[29.712347] (-) TimerEvent: {}
+[29.820753] (-) TimerEvent: {}
+[29.931413] (-) TimerEvent: {}
+[30.042049] (-) TimerEvent: {}
+[30.140172] (drone_bringup) JobEnded: {'identifier': 'drone_bringup', 'rc': 0}
+[30.152580] (-) TimerEvent: {}
+[30.261089] (-) TimerEvent: {}
+[30.371713] (-) TimerEvent: {}
+[30.475018] (-) TimerEvent: {}
+[30.585301] (-) TimerEvent: {}
+[30.696171] (-) TimerEvent: {}
+[30.806743] (-) TimerEvent: {}
+[30.917374] (-) TimerEvent: {}
+[31.028067] (-) TimerEvent: {}
+[31.138697] (-) TimerEvent: {}
+[31.249444] (-) TimerEvent: {}
+[31.360138] (-) TimerEvent: {}
+[31.463428] (-) TimerEvent: {}
+[31.574169] (-) TimerEvent: {}
+[31.682675] (-) TimerEvent: {}
+[31.793103] (-) TimerEvent: {}
+[31.903780] (-) TimerEvent: {}
+[32.014066] (-) TimerEvent: {}
+[32.124258] (-) TimerEvent: {}
+[32.233123] (-) TimerEvent: {}
+[32.343863] (-) TimerEvent: {}
+[32.446327] (-) TimerEvent: {}
+[32.557084] (-) TimerEvent: {}
+[32.667862] (-) TimerEvent: {}
+[32.776400] (-) TimerEvent: {}
+[32.887184] (-) TimerEvent: {}
+[32.997905] (-) TimerEvent: {}
+[33.106166] (-) TimerEvent: {}
+[33.216838] (-) TimerEvent: {}
+[33.327514] (-) TimerEvent: {}
+[33.435366] (-) TimerEvent: {}
+[33.542094] (-) TimerEvent: {}
+[33.652937] (-) TimerEvent: {}
+[33.759087] (-) TimerEvent: {}
+[33.869970] (-) TimerEvent: {}
+[33.980622] (-) TimerEvent: {}
+[34.086748] (-) TimerEvent: {}
+[34.197572] (-) TimerEvent: {}
+[34.308316] (-) TimerEvent: {}
+[34.413240] (-) TimerEvent: {}
+[34.520769] (-) TimerEvent: {}
+[34.631370] (-) TimerEvent: {}
+[34.734142] (-) TimerEvent: {}
+[34.844767] (-) TimerEvent: {}
+[34.955556] (-) TimerEvent: {}
+[35.057948] (-) TimerEvent: {}
+[35.168666] (-) TimerEvent: {}
+[35.279482] (-) TimerEvent: {}
+[35.383181] (-) TimerEvent: {}
+[35.489020] (-) TimerEvent: {}
+[35.599694] (-) TimerEvent: {}
+[35.710424] (-) TimerEvent: {}
+[35.821081] (-) TimerEvent: {}
+[35.922328] (-) TimerEvent: {}
+[36.033045] (-) TimerEvent: {}
+[36.134629] (slam_layer) StdoutLine: {'line': b"-- Setting yaml-cpp_DIR to: '/opt/ros/jazzy/share/yaml_cpp_vendor/cmake/../../../opt/yaml_cpp_vendor/share/cmake/yaml-cpp'\n"}
+[36.136046] (-) TimerEvent: {}
+[36.244778] (-) TimerEvent: {}
+[36.355513] (-) TimerEvent: {}
+[36.459509] (-) TimerEvent: {}
+[36.570239] (-) TimerEvent: {}
+[36.680939] (-) TimerEvent: {}
+[36.790106] (-) TimerEvent: {}
+[36.901116] (-) TimerEvent: {}
+[37.008642] (-) TimerEvent: {}
+[37.025456] (slam_layer) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[37.117015] (-) TimerEvent: {}
+[37.223031] (-) TimerEvent: {}
+[37.333709] (-) TimerEvent: {}
+[37.435471] (-) TimerEvent: {}
+[37.542129] (-) TimerEvent: {}
+[37.652783] (-) TimerEvent: {}
+[37.761111] (-) TimerEvent: {}
+[37.871863] (-) TimerEvent: {}
+[37.976302] (-) TimerEvent: {}
+[38.087001] (-) TimerEvent: {}
+[38.193247] (-) TimerEvent: {}
+[38.304016] (-) TimerEvent: {}
+[38.412281] (-) TimerEvent: {}
+[38.523096] (-) TimerEvent: {}
+[38.633812] (-) TimerEvent: {}
+[38.744546] (-) TimerEvent: {}
+[38.845498] (-) TimerEvent: {}
+[38.946376] (-) TimerEvent: {}
+[39.047262] (-) TimerEvent: {}
+[39.148209] (-) TimerEvent: {}
+[39.249322] (-) TimerEvent: {}
+[39.350573] (-) TimerEvent: {}
+[39.452012] (-) TimerEvent: {}
+[39.520533] (slam_layer) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[39.552332] (-) TimerEvent: {}
+[39.653111] (-) TimerEvent: {}
+[39.754571] (-) TimerEvent: {}
+[39.856603] (-) TimerEvent: {}
+[39.958374] (-) TimerEvent: {}
+[40.059398] (-) TimerEvent: {}
+[40.160404] (-) TimerEvent: {}
+[40.261488] (-) TimerEvent: {}
+[40.362598] (-) TimerEvent: {}
+[40.458158] (slam_layer) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[40.463006] (-) TimerEvent: {}
+[40.564427] (-) TimerEvent: {}
+[40.666028] (-) TimerEvent: {}
+[40.776822] (-) TimerEvent: {}
+[40.879822] (-) TimerEvent: {}
+[40.954312] (slam_layer) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[40.982404] (-) TimerEvent: {}
+[41.093106] (-) TimerEvent: {}
+[41.139849] (slam_layer) StdoutLine: {'line': b'-- Configuring done (27.1s)\n'}
+[41.194592] (-) TimerEvent: {}
+[41.305410] (-) TimerEvent: {}
+[41.408330] (-) TimerEvent: {}
+[41.517375] (-) TimerEvent: {}
+[41.622635] (-) TimerEvent: {}
+[41.733470] (-) TimerEvent: {}
+[41.764326] (slam_layer) StdoutLine: {'line': b'-- Generating done (0.5s)\n'}
+[41.840460] (-) TimerEvent: {}
+[41.948209] (-) TimerEvent: {}
+[42.058878] (-) TimerEvent: {}
+[42.090811] (slam_layer) StdoutLine: {'line': b'-- Build files have been written to: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer\n'}
+[42.107484] (slam_layer) CommandEnded: {'returncode': 0}
+[42.116322] (slam_layer) JobProgress: {'identifier': 'slam_layer', 'progress': 'build'}
+[42.125016] (slam_layer) Command: {'cmd': ['/usr/bin/cmake', '--build', '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer', '--', '-j16', '-l16'], 'cwd': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer', 'env': OrderedDict({'USER': 'lenovo', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/lenovo', 'OLDPWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'lenovo', 'NAME': 'LAPTOP-MLDMFMJ8', 'WSL_INTEROP': '/run/WSL/20320_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python314/Scripts/:/mnt/c/Python314/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/src/flutter/bin:/mnt/c/MinGW/bin:/mnt/c/Users/LENOVO/AppData/Local/Pub/Cache/bin:/mnt/c/ffmpeg-8.0.1-essentials_build/bin:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/LENOVO/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/LENOVO/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.17.10-hotspot/bin:/mnt/c/Users/LENOVO/AppData/Local/Python/bin:/mnt/c/Users/LENOVO/AppData/Roaming/npm:/mnt/c/Users/LENOVO/AppData/Local/Programs/Antigravity/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer', 'PYTHONPATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy', 'WSLENV': ''}), 'shell': False}
+[42.162193] (-) TimerEvent: {}
+[42.271021] (-) TimerEvent: {}
+[42.339056] (slam_layer) CommandEnded: {'returncode': 0}
+[42.370493] (slam_layer) JobProgress: {'identifier': 'slam_layer', 'progress': 'install'}
+[42.371150] (-) TimerEvent: {}
+[42.380136] (slam_layer) Command: {'cmd': ['/usr/bin/cmake', '--install', '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer'], 'cwd': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer', 'env': OrderedDict({'USER': 'lenovo', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/lenovo', 'OLDPWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'lenovo', 'NAME': 'LAPTOP-MLDMFMJ8', 'WSL_INTEROP': '/run/WSL/20320_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python314/Scripts/:/mnt/c/Python314/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/src/flutter/bin:/mnt/c/MinGW/bin:/mnt/c/Users/LENOVO/AppData/Local/Pub/Cache/bin:/mnt/c/ffmpeg-8.0.1-essentials_build/bin:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/LENOVO/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/LENOVO/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/LENOVO/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.17.10-hotspot/bin:/mnt/c/Users/LENOVO/AppData/Local/Python/bin:/mnt/c/Users/LENOVO/AppData/Roaming/npm:/mnt/c/Users/LENOVO/AppData/Local/Programs/Antigravity/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer', 'PYTHONPATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/control_layer:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup:/opt/ros/jazzy', 'WSLENV': ''}), 'shell': False}
+[42.401273] (slam_layer) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[42.419693] (slam_layer) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[42.476315] (-) TimerEvent: {}
+[42.513818] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/config/slam_toolbox_params.yaml\n'}
+[42.582646] (-) TimerEvent: {}
+[42.634435] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/ament_index/resource_index/package_run_dependencies/slam_layer\n'}
+[42.687523] (-) TimerEvent: {}
+[42.736609] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/ament_index/resource_index/parent_prefix_path/slam_layer\n'}
+[42.777759] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/environment/ament_prefix_path.sh\n'}
+[42.788538] (-) TimerEvent: {}
+[42.828065] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/environment/ament_prefix_path.dsv\n'}
+[42.869728] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/environment/path.sh\n'}
+[42.890463] (-) TimerEvent: {}
+[42.919990] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/environment/path.dsv\n'}
+[42.962164] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/local_setup.bash\n'}
+[42.993304] (-) TimerEvent: {}
+[43.006662] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/local_setup.sh\n'}
+[43.048018] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/local_setup.zsh\n'}
+[43.089829] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/local_setup.dsv\n'}
+[43.093619] (-) TimerEvent: {}
+[43.109329] (slam_layer) StdoutLine: {'line': b'-- Symlinking: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/package.dsv\n'}
+[43.202110] (-) TimerEvent: {}
+[43.269563] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/ament_index/resource_index/packages/slam_layer\n'}
+[43.305376] (-) TimerEvent: {}
+[43.318164] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/cmake/slam_layerConfig.cmake\n'}
+[43.363098] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/cmake/slam_layerConfig-version.cmake\n'}
+[43.408177] (-) TimerEvent: {}
+[43.413630] (slam_layer) StdoutLine: {'line': b'-- Up-to-date symlink: /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/slam_layer/share/slam_layer/package.xml\n'}
+[43.422801] (slam_layer) CommandEnded: {'returncode': 0}
+[43.509671] (-) TimerEvent: {}
+[43.620379] (-) TimerEvent: {}
+[43.731200] (-) TimerEvent: {}
+[43.841946] (-) TimerEvent: {}
+[43.943194] (-) TimerEvent: {}
+[44.054044] (-) TimerEvent: {}
+[44.164767] (-) TimerEvent: {}
+[44.274902] (-) TimerEvent: {}
+[44.375650] (-) TimerEvent: {}
+[44.476613] (-) TimerEvent: {}
+[44.577540] (-) TimerEvent: {}
+[44.678465] (-) TimerEvent: {}
+[44.779564] (slam_layer) JobEnded: {'identifier': 'slam_layer', 'rc': 0}
+[44.793962] (-) TimerEvent: {}
+[44.794406] (-) EventReactorShutdown: {}

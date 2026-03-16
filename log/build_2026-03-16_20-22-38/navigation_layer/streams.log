@@ -1,0 +1,38 @@
+[5.450s] Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/build
+[6.857s] running develop
+[7.556s] Removing /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages/navigation-layer.egg-link (link to .)
+[7.685s] Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer' returned '0': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/build
+[7.699s] Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/navigation_layer': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/navigation_layer build --build-base /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/build install --record /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/install.log --single-version-externally-managed install_data --force
+[9.048s] running egg_info
+[9.097s] writing ../../build/navigation_layer/navigation_layer.egg-info/PKG-INFO
+[9.112s] writing dependency_links to ../../build/navigation_layer/navigation_layer.egg-info/dependency_links.txt
+[9.123s] writing entry points to ../../build/navigation_layer/navigation_layer.egg-info/entry_points.txt
+[9.132s] writing requirements to ../../build/navigation_layer/navigation_layer.egg-info/requires.txt
+[9.141s] writing top-level names to ../../build/navigation_layer/navigation_layer.egg-info/top_level.txt
+[9.286s] reading manifest file '../../build/navigation_layer/navigation_layer.egg-info/SOURCES.txt'
+[9.435s] writing manifest file '../../build/navigation_layer/navigation_layer.egg-info/SOURCES.txt'
+[9.444s] running build
+[9.446s] running build_py
+[9.456s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/build
+[9.459s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/build/lib
+[9.465s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/build/lib/navigation_layer
+[9.488s] copying navigation_layer/navigation_status_node.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/build/lib/navigation_layer
+[9.542s] copying navigation_layer/__init__.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/build/lib/navigation_layer
+[9.569s] running install
+[9.589s] running install_lib
+[9.679s] creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages/navigation_layer
+[9.723s] copying /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/build/lib/navigation_layer/navigation_status_node.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages/navigation_layer
+[9.816s] copying /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/build/lib/navigation_layer/__init__.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages/navigation_layer
+[9.906s] byte-compiling /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages/navigation_layer/navigation_status_node.py to navigation_status_node.cpython-312.pyc
+[10.016s] byte-compiling /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages/navigation_layer/__init__.py to __init__.cpython-312.pyc
+[10.107s] running install_data
+[10.132s] copying resource/navigation_layer -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/ament_index/resource_index/packages
+[10.205s] copying package.xml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer
+[10.268s] copying config/costmap_params.yaml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/config
+[10.328s] copying config/nav2_params.yaml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/share/navigation_layer/config
+[10.383s] running install_egg_info
+[10.478s] Copying ../../build/navigation_layer/navigation_layer.egg-info to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages/navigation_layer-0.0.0-py3.12.egg-info
+[11.107s] running install_scripts
+[11.618s] Installing navigation_status_node script to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/bin
+[11.640s] writing list of installed files to '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/install.log'
+[12.672s] Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/navigation_layer' returned '0': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/navigation_layer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/navigation_layer build --build-base /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/build install --record /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/navigation_layer/install.log --single-version-externally-managed install_data --force

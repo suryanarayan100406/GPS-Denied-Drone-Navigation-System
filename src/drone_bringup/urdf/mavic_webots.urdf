@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<robot name="mavic2pro">
+    <webots>
+        <plugin type="webots_ros2_driver::Ros2IMU">
+            <enabled>true</enabled>
+            <topicName>/imu</topicName>
+            <alwaysOn>true</alwaysOn>
+            <frameName>imu_link</frameName>
+            <inertialUnitName>inertial unit</inertialUnitName>
+            <gyroName>gyro</gyroName>
+            <accelerometerName>accelerometer</accelerometerName>
+        </plugin>
+        
+        <plugin type="webots_ros2_driver::Ros2Camera">
+            <enabled>true</enabled>
+            <topicName>/camera/image_raw</topicName>
+            <alwaysOn>true</alwaysOn>
+            <cameraName>camera</cameraName>
+        </plugin>
+
+        <plugin type="webots_ros2_driver::Ros2GPS">
+            <enabled>true</enabled>
+            <topicName>/gps</topicName>
+            <alwaysOn>true</alwaysOn>
+            <gpsName>gps</gpsName>
+        </plugin>
+        
+        <!-- Assuming custom motor mixer will subscribe to /cmd_vel or specific thrusts and send to Webots natively -->
+        <!-- For standard Twist control directly, standard ROS2 diff drive doesn't work for drones, we need custom plugin or just read out sensors and use typical topics -->
+        <plugin type="webots_ros2_driver::PythonPlugin">
+            <package>drone_bringup</package>
+            <modules>mavic_driver</modules>
+        </plugin>
+    </webots>
+</robot>

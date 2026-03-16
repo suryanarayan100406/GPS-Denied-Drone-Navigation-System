@@ -1,0 +1,19 @@
+[20.561s] Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/build --no-deps symlink_data --force
+[23.511s] running develop
+[24.171s] running egg_info
+[24.227s] writing telemetry.egg-info/PKG-INFO
+[24.238s] writing dependency_links to telemetry.egg-info/dependency_links.txt
+[24.245s] writing entry points to telemetry.egg-info/entry_points.txt
+[24.252s] writing requirements to telemetry.egg-info/requires.txt
+[24.259s] writing top-level names to telemetry.egg-info/top_level.txt
+[24.459s] reading manifest file 'telemetry.egg-info/SOURCES.txt'
+[24.609s] writing manifest file 'telemetry.egg-info/SOURCES.txt'
+[24.726s] running build_ext
+[24.728s] Creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages/telemetry.egg-link (link to .)
+[24.775s] Installing dashboard_node script to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/bin
+[24.801s] 
+[24.803s] Installed /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry
+[24.809s] running symlink_data
+[24.858s] symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/resource/telemetry -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/ament_index/resource_index/packages
+[24.895s] symbolically linking /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/package.xml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/share/telemetry
+[25.458s] Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry' returned '0': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/build --no-deps symlink_data --force

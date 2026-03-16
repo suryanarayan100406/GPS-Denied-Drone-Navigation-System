@@ -1,0 +1,38 @@
+running develop
+Removing /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages/perception-layer.egg-link (link to .)
+running egg_info
+writing ../../build/perception_layer/perception_layer.egg-info/PKG-INFO
+writing dependency_links to ../../build/perception_layer/perception_layer.egg-info/dependency_links.txt
+writing entry points to ../../build/perception_layer/perception_layer.egg-info/entry_points.txt
+writing requirements to ../../build/perception_layer/perception_layer.egg-info/requires.txt
+writing top-level names to ../../build/perception_layer/perception_layer.egg-info/top_level.txt
+reading manifest file '../../build/perception_layer/perception_layer.egg-info/SOURCES.txt'
+writing manifest file '../../build/perception_layer/perception_layer.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/build
+creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/build/lib
+creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/build/lib/perception_layer
+copying perception_layer/noise_injection_node.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/build/lib/perception_layer
+copying perception_layer/sensor_health_monitor.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/build/lib/perception_layer
+copying perception_layer/__init__.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/build/lib/perception_layer
+running install
+running install_lib
+creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages/perception_layer
+copying /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/build/lib/perception_layer/noise_injection_node.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages/perception_layer
+copying /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/build/lib/perception_layer/sensor_health_monitor.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages/perception_layer
+copying /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/build/lib/perception_layer/__init__.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages/perception_layer
+byte-compiling /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages/perception_layer/noise_injection_node.py to noise_injection_node.cpython-312.pyc
+byte-compiling /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages/perception_layer/sensor_health_monitor.py to sensor_health_monitor.cpython-312.pyc
+byte-compiling /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages/perception_layer/__init__.py to __init__.cpython-312.pyc
+running install_data
+copying resource/perception_layer -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/ament_index/resource_index/packages
+copying package.xml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer
+copying config/ekf_params.yaml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/share/perception_layer/config
+running install_egg_info
+Copying ../../build/perception_layer/perception_layer.egg-info to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/lib/python3.12/site-packages/perception_layer-0.0.0-py3.12.egg-info
+running install_scripts
+Installing ekf_fusion_node script to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin
+Installing noise_injection_node script to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin
+Installing sensor_health_monitor script to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/perception_layer/bin
+writing list of installed files to '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/perception_layer/install.log'

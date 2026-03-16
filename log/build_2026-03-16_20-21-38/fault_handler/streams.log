@@ -1,0 +1,18 @@
+[5.628s] Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build --no-deps symlink_data
+[7.163s] running develop
+[7.773s] running egg_info
+[7.816s] writing fault_handler.egg-info/PKG-INFO
+[7.827s] writing dependency_links to fault_handler.egg-info/dependency_links.txt
+[7.836s] writing entry points to fault_handler.egg-info/entry_points.txt
+[7.847s] writing requirements to fault_handler.egg-info/requires.txt
+[7.855s] writing top-level names to fault_handler.egg-info/top_level.txt
+[8.033s] reading manifest file 'fault_handler.egg-info/SOURCES.txt'
+[8.176s] writing manifest file 'fault_handler.egg-info/SOURCES.txt'
+[8.246s] running build_ext
+[8.248s] Creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages/fault-handler.egg-link (link to .)
+[8.299s] Installing watchdog_node script to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/bin
+[8.343s] 
+[8.346s] Installed /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler
+[8.353s] running symlink_data
+[8.366s] error: can't copy '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/resource/fault_handler': doesn't exist or not a regular file
+[9.041s] Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler' returned '1': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/fault_handler/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/fault_handler/build --no-deps symlink_data

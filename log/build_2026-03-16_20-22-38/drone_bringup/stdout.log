@@ -1,0 +1,30 @@
+running develop
+Removing /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages/drone-bringup.egg-link (link to .)
+running egg_info
+writing ../../build/drone_bringup/drone_bringup.egg-info/PKG-INFO
+writing dependency_links to ../../build/drone_bringup/drone_bringup.egg-info/dependency_links.txt
+writing requirements to ../../build/drone_bringup/drone_bringup.egg-info/requires.txt
+writing top-level names to ../../build/drone_bringup/drone_bringup.egg-info/top_level.txt
+reading manifest file '../../build/drone_bringup/drone_bringup.egg-info/SOURCES.txt'
+writing manifest file '../../build/drone_bringup/drone_bringup.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/build
+creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/build/lib
+creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/build/lib/drone_bringup
+copying drone_bringup/__init__.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/build/lib/drone_bringup
+running install
+running install_lib
+creating /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages/drone_bringup
+copying /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/build/lib/drone_bringup/__init__.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages/drone_bringup
+byte-compiling /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages/drone_bringup/__init__.py to __init__.cpython-312.pyc
+running install_data
+copying resource/drone_bringup -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/ament_index/resource_index/packages
+copying package.xml -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup
+copying launch/master_launch.py -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/launch
+copying urdf/mavic_webots.urdf -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/urdf
+copying worlds/tunnel_world.wbt -> /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/share/drone_bringup/worlds
+running install_egg_info
+Copying ../../build/drone_bringup/drone_bringup.egg-info to /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/drone_bringup/lib/python3.12/site-packages/drone_bringup-0.0.0-py3.12.egg-info
+running install_scripts
+writing list of installed files to '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/drone_bringup/install.log'
