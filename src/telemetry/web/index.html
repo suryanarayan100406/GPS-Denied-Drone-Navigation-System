@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPS-Denied Drone Telemetry</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #121212; color: #fff; margin: 0; padding: 20px; }
+        h1 { border-bottom: 2px solid #00c853; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .card { background: #1e1e1e; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .alert { color: #ff5252; font-weight: bold; }
+        .ok { color: #00e676; font-weight: bold; }
+    </style>
+    <!-- Basic Roslibjs for Web UI bridge -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/roslibjs/1.1.0/roslib.min.js"></script>
+</head>
+<body>
+    <h1>🛰️ Robothon'26: GPS-Denied Navigation Telemetry</h1>
+    
+    <div class="grid">
+        <div class="card">
+            <h2>System Health</h2>
+            <p>Connection: <span id="connection_status" class="alert">Disconnected</span></p>
+            <p>Sensors: <span id="sensor_status" class="ok">WAITING</span></p>
+            <p>Fault Logs: <span id="fault_log">None</span></p>
+        </div>
+
+        <div class="card">
+            <h2>PID Altitude Error</h2>
+            <p>Current Target Error: <span id="pid_error" style="font-size: 1.5em;">0.00 cm</span></p>
+            <canvas id="pidGraph" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script>
+        var ros = new ROSLIB.Ros({
+            url : 'ws://localhost:9090'
+        });
+
+        ros.on('connection', function() {
+            document.getElementById('connection_status').innerText = 'Connected';
+            document.getElementById('connection_status').className = 'ok';
+        });
+
+        ros.on('error', function(error) {
+            document.getElementById('connection_status').innerText = 'Error';
+            document.getElementById('connection_status').className = 'alert';
+        });
+
+        ros.on('close', function() {
+            document.getElementById('connection_status').innerText = 'Disconnected';
+            document.getElementById('connection_status').className = 'alert';
+        });
+
+        // Sensor Health Listener
+        var healthListener = new ROSLIB.Topic({ ros : ros, name : '/sensor_status', messageType : 'std_msgs/String' });
+        healthListener.subscribe(function(message) {
+            document.getElementById('sensor_status').innerText = message.data;
+            document.getElementById('sensor_status').className = message.data === 'OK' ? 'ok' : 'alert';
+        });
+
+        // Fault Log Listener
+        var faultListener = new ROSLIB.Topic({ ros : ros, name : '/fault_log', messageType : 'std_msgs/String' });
+        faultListener.subscribe(function(message) {
+            document.getElementById('fault_log').innerText = message.data;
+        });
+
+        // PID Telemetry Listener
+        var pidListener = new ROSLIB.Topic({ ros : ros, name : '/pid_telemetry', messageType : 'std_msgs/Float32MultiArray' });
+        pidListener.subscribe(function(message) {
+            if(message.data.length > 0) {
+                // error in meters to cm
+                let err_cm = (message.data[0] * 100).toFixed(2);
+                document.getElementById('pid_error').innerText = err_cm + " cm";
+            }
+        });
+    </script>
+</body>
+</html>
