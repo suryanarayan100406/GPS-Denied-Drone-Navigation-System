@@ -1,0 +1,110 @@
+#VRML_SIM R2023b utf8
+
+WorldInfo {
+  basicTimeStep 32
+}
+Viewpoint {
+  orientation 1 0 0 -1.56
+  position 0 0 16
+}
+TexturedBackground { }
+TexturedBackgroundLight { }
+
+Floor {
+  translation 0 0 0
+  size 10 10
+  appearance PBRAppearance {
+    baseColor 0.95 0.95 0.95
+    roughness 1
+    metalness 0
+  }
+}
+
+Solid {
+  name "start_marker"
+  translation -4 0 0.05
+  children [ Shape { appearance PBRAppearance { baseColor 0 0.8 0 } geometry Sphere { radius 0.15 } } ]
+  boundingObject Sphere { radius 0.15 }
+  locked TRUE
+}
+Solid {
+  name "goal_marker"
+  translation 4 0 0.05
+  children [ Shape { appearance PBRAppearance { baseColor 0.9 0.2 0 } geometry Sphere { radius 0.15 } } ]
+  boundingObject Sphere { radius 0.15 }
+  locked TRUE
+}
+
+Robot {
+  name "drone"
+  translation -4 0 0.5
+  controller "<extern>"
+  children [
+    Shape { appearance PBRAppearance { baseColor 0.3 0.3 0.35 } geometry Box { size 0.4 0.4 0.12 } }
+    GPS { name "gps" }
+    InertialUnit { name "imu" }
+    Lidar {
+      name "lidar"
+      horizontalResolution 360
+      numberOfLayers 1
+      fieldOfView 6.283
+      minRange 0.05
+      maxRange 5.0
+      type "fixed"
+      translation 0 0 0.08
+      rotation 0 1 0 1.5708
+    }
+  ]
+  boundingObject Box { size 0.42 0.42 0.14 }
+  physics Physics { mass 1.2 density -1 }
+}
+
+# Maze walls with approximately 1.2m corridors
+Solid { translation -2.8 0.0 0.35 children [ Shape { appearance PBRAppearance { baseColor 0.1 0.4 0.8 } geometry Box { size 0.5 8.0 0.7 } } ] boundingObject Box { size 0.5 8.0 0.7 } locked TRUE }
+Solid { translation -0.8 -2.3 0.35 children [ Shape { appearance PBRAppearance { baseColor 0.1 0.4 0.8 } geometry Box { size 0.5 5.4 0.7 } } ] boundingObject Box { size 0.5 5.4 0.7 } locked TRUE }
+Solid { translation -0.8 2.3 0.35 children [ Shape { appearance PBRAppearance { baseColor 0.1 0.4 0.8 } geometry Box { size 0.5 5.4 0.7 } } ] boundingObject Box { size 0.5 5.4 0.7 } locked TRUE }
+Solid { translation 1.2 0.0 0.35 children [ Shape { appearance PBRAppearance { baseColor 0.1 0.4 0.8 } geometry Box { size 0.5 8.0 0.7 } } ] boundingObject Box { size 0.5 8.0 0.7 } locked TRUE }
+Solid { translation 3.0 -2.0 0.35 children [ Shape { appearance PBRAppearance { baseColor 0.1 0.4 0.8 } geometry Box { size 0.5 4.0 0.7 } } ] boundingObject Box { size 0.5 4.0 0.7 } locked TRUE }
+Solid { translation 3.0 2.0 0.35 children [ Shape { appearance PBRAppearance { baseColor 0.1 0.4 0.8 } geometry Box { size 0.5 4.0 0.7 } } ] boundingObject Box { size 0.5 4.0 0.7 } locked TRUE }
+
+# Cross walls creating long passages
+Solid { translation -1.8 -1.2 0.35 children [ Shape { appearance PBRAppearance { baseColor 0.2 0.55 0.9 } geometry Box { size 2.0 0.5 0.7 } } ] boundingObject Box { size 2.0 0.5 0.7 } locked TRUE }
+Solid { translation 0.2 1.2 0.35 children [ Shape { appearance PBRAppearance { baseColor 0.2 0.55 0.9 } geometry Box { size 2.0 0.5 0.7 } } ] boundingObject Box { size 2.0 0.5 0.7 } locked TRUE }
+Solid { translation 2.2 -0.6 0.35 children [ Shape { appearance PBRAppearance { baseColor 0.2 0.55 0.9 } geometry Box { size 2.0 0.5 0.7 } } ] boundingObject Box { size 2.0 0.5 0.7 } locked TRUE }
+
+# Moving obstacle with SliderJoint (oscillating wall)
+Robot {
+  name "moving_wall"
+  translation 0.6 0.0 0.0
+  controller "moving_wall_controller"
+  children [
+    SliderJoint {
+      jointParameters JointParameters {
+        axis 0 1 0
+      }
+      device [
+        LinearMotor {
+          name "slider_motor"
+          maxVelocity 0.6
+          minPosition -0.8
+          maxPosition 0.8
+          position 0.8
+        }
+        PositionSensor {
+          name "slider_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0 0.35
+        children [
+          Shape {
+            appearance PBRAppearance { baseColor 0.9 0.25 0.25 }
+            geometry Box { size 0.35 1.8 0.7 }
+          }
+        ]
+        boundingObject Box { size 0.35 1.8 0.7 }
+        physics Physics { mass 0.4 density -1 }
+      }
+    }
+  ]
+}

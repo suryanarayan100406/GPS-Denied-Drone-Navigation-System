@@ -1,0 +1,28 @@
+# ROS2/colcon
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ROS bags and outputs
+bags/
+*.db3
+*.mcap
+
+# Metrics/results artifacts
+results/*.json
+**/results/*.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,4 +1,0 @@
-[console_scripts]
-ekf_fusion_node = perception_layer.ekf_fusion_node:main
-noise_injection_node = perception_layer.noise_injection_node:main
-sensor_health_monitor = perception_layer.sensor_health_monitor:main

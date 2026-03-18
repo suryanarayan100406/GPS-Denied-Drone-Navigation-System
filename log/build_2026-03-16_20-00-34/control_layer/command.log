@@ -1,4 +1,0 @@
-Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer -- -j16 -l16
-Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer -- -j16 -l16
-Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer
-Invoked command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer

@@ -1,3 +1,0 @@
-[4.247s] Invoking command in '/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry': PYTHONPATH=/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/telemetry/build
-[5.574s] running develop
-[6.194s] Removing /mnt/c/Users/LENOVO/OneDrive/Desktop/drone/install/telemetry/lib/python3.12/site-packages/telemetry.egg-link (link to .)

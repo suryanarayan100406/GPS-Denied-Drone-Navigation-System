@@ -1,1 +1,0 @@
-/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/control_layer/ament_cmake_environment_hooks/local_setup.sh

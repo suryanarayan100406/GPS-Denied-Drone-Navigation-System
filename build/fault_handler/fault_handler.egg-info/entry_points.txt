@@ -1,2 +1,0 @@
-[console_scripts]
-watchdog_node = fault_handler.watchdog_node:main

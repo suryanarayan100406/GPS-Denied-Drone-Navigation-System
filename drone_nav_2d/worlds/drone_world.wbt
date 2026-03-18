@@ -1,0 +1,160 @@
+#VRML_SIM R2023b utf8
+
+WorldInfo {
+  basicTimeStep 32
+}
+Viewpoint {
+  orientation 1 0 0 -1.56
+  position 0 0 14
+}
+TexturedBackground { }
+TexturedBackgroundLight { }
+
+Floor {
+  translation 0 0 0
+  size 10 10
+  appearance PBRAppearance {
+    baseColor 0.92 0.92 0.92
+    roughness 1
+    metalness 0
+  }
+}
+
+Solid {
+  name "start_marker"
+  translation -4 0 0.05
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0 0.8 0 }
+      geometry Sphere { radius 0.15 }
+    }
+  ]
+  boundingObject Sphere { radius 0.15 }
+  locked TRUE
+}
+
+Solid {
+  name "goal_marker"
+  translation 4 0 0.05
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.9 0.2 0 }
+      geometry Sphere { radius 0.15 }
+    }
+  ]
+  boundingObject Sphere { radius 0.15 }
+  locked TRUE
+}
+
+Robot {
+  name "drone"
+  translation -4 0 0.5
+  rotation 0 0 1 0
+  controller "<extern>"
+  supervisor FALSE
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.3 0.3 0.35 }
+      geometry Box { size 0.4 0.4 0.12 }
+    }
+    Pose {
+      translation 0.2 0.2 0.07
+      children [ Shape { appearance PBRAppearance { baseColor 0.1 0.1 0.1 } geometry Cylinder { radius 0.06 height 0.02 } } ]
+    }
+    Pose {
+      translation 0.2 -0.2 0.07
+      children [ Shape { appearance PBRAppearance { baseColor 0.1 0.1 0.1 } geometry Cylinder { radius 0.06 height 0.02 } } ]
+    }
+    Pose {
+      translation -0.2 0.2 0.07
+      children [ Shape { appearance PBRAppearance { baseColor 0.1 0.1 0.1 } geometry Cylinder { radius 0.06 height 0.02 } } ]
+    }
+    Pose {
+      translation -0.2 -0.2 0.07
+      children [ Shape { appearance PBRAppearance { baseColor 0.1 0.1 0.1 } geometry Cylinder { radius 0.06 height 0.02 } } ]
+    }
+    GPS {
+      name "gps"
+    }
+    InertialUnit {
+      name "imu"
+    }
+    Lidar {
+      name "lidar"
+      horizontalResolution 360
+      numberOfLayers 1
+      fieldOfView 6.283
+      minRange 0.05
+      maxRange 5.0
+      type "fixed"
+      translation 0 0 0.08
+      rotation 0 1 0 1.5708
+    }
+  ]
+  boundingObject Box { size 0.42 0.42 0.14 }
+  physics Physics {
+    mass 1.2
+    density -1
+  }
+}
+
+Solid {
+  translation -2.8 1.6 0.25
+  children [ Shape { appearance PBRAppearance { baseColor 0.35 0.55 0.85 } geometry Box { size 0.6 0.8 0.5 } } ]
+  boundingObject Box { size 0.6 0.8 0.5 }
+  locked TRUE
+}
+Solid {
+  translation -2.2 -1.5 0.25
+  children [ Shape { appearance PBRAppearance { baseColor 0.35 0.55 0.85 } geometry Box { size 0.8 0.6 0.5 } } ]
+  boundingObject Box { size 0.8 0.6 0.5 }
+  locked TRUE
+}
+Solid {
+  translation -0.8 0.8 0.25
+  children [ Shape { appearance PBRAppearance { baseColor 0.35 0.55 0.85 } geometry Box { size 1.0 0.5 0.5 } } ]
+  boundingObject Box { size 1.0 0.5 0.5 }
+  locked TRUE
+}
+Solid {
+  translation 0.5 -1.8 0.25
+  children [ Shape { appearance PBRAppearance { baseColor 0.35 0.55 0.85 } geometry Box { size 0.6 1.0 0.5 } } ]
+  boundingObject Box { size 0.6 1.0 0.5 }
+  locked TRUE
+}
+Solid {
+  translation 1.6 1.7 0.25
+  children [ Shape { appearance PBRAppearance { baseColor 0.35 0.55 0.85 } geometry Box { size 0.7 0.7 0.5 } } ]
+  boundingObject Box { size 0.7 0.7 0.5 }
+  locked TRUE
+}
+Solid {
+  translation -0.2 -0.3 0.25
+  children [ Shape { appearance PBRAppearance { baseColor 0.65 0.3 0.8 } geometry Cylinder { radius 0.35 height 0.5 } } ]
+  boundingObject Cylinder { radius 0.35 height 0.5 }
+  locked TRUE
+}
+Solid {
+  translation 2.4 -0.2 0.25
+  children [ Shape { appearance PBRAppearance { baseColor 0.65 0.3 0.8 } geometry Cylinder { radius 0.4 height 0.5 } } ]
+  boundingObject Cylinder { radius 0.4 height 0.5 }
+  locked TRUE
+}
+Solid {
+  translation 3.0 1.3 0.25
+  children [ Shape { appearance PBRAppearance { baseColor 0.65 0.3 0.8 } geometry Cylinder { radius 0.3 height 0.5 } } ]
+  boundingObject Cylinder { radius 0.3 height 0.5 }
+  locked TRUE
+}
+Solid {
+  translation 0.0 2.5 0.25
+  children [ Shape { appearance PBRAppearance { baseColor 0.65 0.3 0.8 } geometry Cylinder { radius 0.35 height 0.5 } } ]
+  boundingObject Cylinder { radius 0.35 height 0.5 }
+  locked TRUE
+}
+Solid {
+  translation -3.2 -2.5 0.25
+  children [ Shape { appearance PBRAppearance { baseColor 0.65 0.3 0.8 } geometry Cylinder { radius 0.3 height 0.5 } } ]
+  boundingObject Cylinder { radius 0.3 height 0.5 }
+  locked TRUE
+}

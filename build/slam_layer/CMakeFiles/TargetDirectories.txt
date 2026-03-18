@@ -1,9 +1,0 @@
-/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer/CMakeFiles/uninstall.dir
-/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer/CMakeFiles/slam_layer_uninstall.dir
-/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer/CMakeFiles/test.dir
-/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer/CMakeFiles/edit_cache.dir
-/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer/CMakeFiles/list_install_components.dir
-/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer/CMakeFiles/install.dir
-/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer/CMakeFiles/install/local.dir
-/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/build/slam_layer/CMakeFiles/install/strip.dir

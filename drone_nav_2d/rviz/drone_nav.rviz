@@ -1,0 +1,129 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Selection
+    Name: Selection
+  - Class: rviz_common/Tool Properties
+    Name: Tool Properties
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.7
+      Class: rviz_default_plugins/Map
+      Color Scheme: map
+      Enabled: true
+      Name: OccupancyGrid
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map
+      Use Timestamp: false
+    - Buffer Length: 1
+      Class: rviz_default_plugins/Path
+      Color: 25; 180; 25
+      Enabled: true
+      Head Diameter: 0.05
+      Head Length: 0.05
+      Length: 0.3
+      Line Style: Lines
+      Line Width: 0.05
+      Name: PlannedPath
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0.02
+      Pose Color: 255; 255; 255
+      Pose Style: None
+      Queue Size: 10
+      Radius: 0.03
+      Shaft Diameter: 0.02
+      Shaft Length: 0.05
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /planned_path
+    - Buffer Length: 1
+      Class: rviz_default_plugins/Path
+      Color: 30; 100; 240
+      Enabled: true
+      Head Diameter: 0.05
+      Head Length: 0.05
+      Length: 0.25
+      Line Style: Lines
+      Line Width: 0.05
+      Name: DroneTrajectory
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0.03
+      Pose Color: 255; 255; 255
+      Pose Style: None
+      Queue Size: 10
+      Radius: 0.03
+      Shaft Diameter: 0.02
+      Shaft Length: 0.05
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /drone_trajectory
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: ObstacleMarkers
+      Namespaces:
+        obstacles: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /obstacle_markers
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Marker Scale: 0.2
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+  Enabled: true
+  Fixed Frame: map
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: map
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+      Hide Inactive Objects: true
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/FocusCamera
+    - Class: rviz_default_plugins/Measure
+  Value: true
+Views:
+  Current:
+    Class: rviz_default_plugins/TopDownOrtho
+    Distance: 18
+    Enable Stereo Rendering:
+      Stereo Eye Separation: 0.06
+      Stereo Focal Distance: 1
+      Swap Stereo Eyes: false
+      Value: false
+    Focal Point:
+      X: 0
+      Y: 0
+      Z: 0
+    Name: Current View
+    Near Clip Distance: 0.01
+    Scale: 10
+    Target Frame: map
+Window Geometry:
+  Height: 900
+  Width: 1500

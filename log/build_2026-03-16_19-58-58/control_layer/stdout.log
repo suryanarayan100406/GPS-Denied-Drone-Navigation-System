@@ -1,4 +1,0 @@
-[ 25%] [32mBuilding CXX object CMakeFiles/pid_controller.dir/src/pid_controller.cpp.o[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/motor_mixer.dir/src/motor_mixer.cpp.o[0m
-[ 75%] [32m[1mLinking CXX executable motor_mixer[0m
-[ 75%] Built target motor_mixer

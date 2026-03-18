@@ -1,1 +1,0 @@
-/mnt/c/Users/LENOVO/OneDrive/Desktop/drone/src/telemetry/setup.py

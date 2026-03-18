@@ -1,2 +1,0 @@
-[console_scripts]
-dashboard_node = telemetry.dashboard_node:main

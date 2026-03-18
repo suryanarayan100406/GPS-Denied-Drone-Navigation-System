@@ -1,0 +1,60 @@
+drone_controller:
+  ros__parameters:
+    pose_topic: /webots/drone/pose
+    use_ground_truth_fallback: true
+    control_rate_hz: 20.0
+    waypoint_tolerance: 0.15
+    max_velocity_xy: 1.2
+    max_velocity_z: 0.6
+    kp_x: 1.2
+    ki_x: 0.05
+    kd_x: 0.2
+    kp_y: 1.2
+    ki_y: 0.05
+    kd_y: 0.2
+    kp_z: 1.5
+    ki_z: 0.05
+    kd_z: 0.25
+    integral_limit_xy: 1.0
+    integral_limit_z: 0.8
+    fixed_altitude: 0.5
+
+path_planner:
+  ros__parameters:
+    map_resolution: 0.1
+    map_width_m: 10.0
+    map_height_m: 10.0
+    inflation_radius_m: 0.4
+    drone_radius_m: 0.2
+    heuristic_weight_manhattan: 0.7
+    heuristic_weight_euclidean: 0.3
+    allow_diagonal: true
+    replan_rate_hz: 1.0
+    start_xy: [-4.0, 0.0]
+    goal_xy: [4.0, 0.0]
+    random_seed: 42
+    rrt_max_iterations: 2500
+    rrt_step_size_m: 0.35
+    rrt_goal_sample_rate: 0.2
+
+map_publisher:
+  ros__parameters:
+    frame_id: map
+    resolution: 0.1
+    width: 100
+    height: 100
+    publish_rate_hz: 1.0
+    inflation_radius_m: 0.4
+
+obstacle_avoidance:
+  ros__parameters:
+    scan_topic: /webots/drone/scan
+    obstacle_threshold_m: 0.5
+    influence_distance_m: 1.2
+    repulsive_gain: 0.9
+    tangential_gain: 0.45
+    max_avoidance_velocity: 0.8
+
+metrics_logger:
+  ros__parameters:
+    output_file: results/mission_metrics.json
