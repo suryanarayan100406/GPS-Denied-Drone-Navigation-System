@@ -1,11 +1,45 @@
-import os
+"""
+Launch drone navigation with Webots GUI simulator and video recording using ffmpeg.
+Records the Webots display output to MP4 video file.
+"""
 
+import os
+import subprocess
+import time
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, LogInfo
+from launch.actions import DeclareLaunchArgument, ExecuteProcess, LogInfo, OpaqueFunction
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from webots_ros2_driver.webots_launcher import WebotsLauncher
+
+
+def start_screen_recording(context, *args, **kwargs):
+    """Start recording the screen with ffmpeg."""
+    # Try to record the first active display
+    output_file = context.launch_configurations.get('video_output', 'videos/drone_nav_demo.mp4')
+    os.makedirs(os.path.dirname(output_file) or '.', exist_ok=True)
+    
+    # ffmpeg command to record desktop at 30 fps
+    record_cmd = [
+        'ffmpeg',
+        '-f', 'gdigrab',
+        '-framerate', '30',
+        '-i', 'desktop',  # Windows desktop capture
+        '-c:v', 'libx264',
+        '-crf', '23',
+        '-preset', 'fast',
+        output_file,
+    ]
+    
+    print(f"\nStarting video recording to {output_file}")
+    return [
+        ExecuteProcess(
+            cmd=record_cmd,
+            output='screen',
+            name='ffmpeg_recorder',
+        )
+    ]
 
 
 def generate_launch_description() -> LaunchDescription:
@@ -18,13 +52,16 @@ def generate_launch_description() -> LaunchDescription:
 
     use_hard_world = LaunchConfiguration('use_hard_world')
     bag_output = LaunchConfiguration('bag_output')
+    video_output = LaunchConfiguration('video_output')
 
     with open(urdf_path, 'r', encoding='utf-8') as f:
         robot_description = f.read()
 
-    # Use easy world by default for demo
+    # Select world based on argument
+    selected_world = world_hard if use_hard_world else world_easy
+
     webots = WebotsLauncher(
-        world=world_easy,
+        world=selected_world,
         ros2_supervisor=True,
     )
 
@@ -114,18 +151,23 @@ def generate_launch_description() -> LaunchDescription:
         output='screen',
     )
 
-    actions = [
+    return LaunchDescription([
         DeclareLaunchArgument(
             'use_hard_world',
             default_value='false',
-            description='Set true to launch drone_world_hard.wbt',
+            description='Set true to launch drone_world_hard.wbt (maze)',
         ),
         DeclareLaunchArgument(
             'bag_output',
             default_value='bags/drone_nav_run',
             description='Output directory for rosbag2 recording',
         ),
-        LogInfo(msg=['Launching drone navigation demo (easy world configuration)']),
+        DeclareLaunchArgument(
+            'video_output',
+            default_value='videos/drone_nav_demo.mp4',
+            description='Output file for video recording',
+        ),
+        LogInfo(msg=['Launching Webots drone simulator with video recording']),
         webots,
         bridge_driver,
         map_publisher,
@@ -135,6 +177,5 @@ def generate_launch_description() -> LaunchDescription:
         metrics,
         rviz,
         rosbag,
-    ]
-
-    return LaunchDescription(actions)
+        OpaqueFunction(function=start_screen_recording),
+    ])

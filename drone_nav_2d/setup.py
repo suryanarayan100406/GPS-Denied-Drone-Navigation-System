@@ -9,7 +9,11 @@ setup(
     data_files=[
         ('share/ament_index/resource_index/packages', [f'resource/{package_name}']),
         (f'share/{package_name}', ['package.xml']),
-        (f'share/{package_name}/launch', ['launch/drone_nav_launch.py']),
+        (f'share/{package_name}/launch', [
+            'launch/drone_nav_launch.py',
+            'launch/drone_nav_headless.py',
+            'launch/drone_nav_with_video.py',
+        ]),
         (f'share/{package_name}/config', ['config/nav_params.yaml']),
         (f'share/{package_name}/rviz', ['rviz/drone_nav.rviz']),
         (f'share/{package_name}/worlds', ['worlds/drone_world.wbt', 'worlds/drone_world_hard.wbt']),
@@ -30,6 +34,8 @@ setup(
             'drone_controller = drone_nav_2d.drone_controller:main',
             'obstacle_avoidance = drone_nav_2d.obstacle_avoidance:main',
             'metrics_logger = drone_nav_2d.metrics_logger:main',
-        ],
+                'dynamic_environment = drone_nav_2d.dynamic_environment:main',
+                'advanced_metrics = drone_nav_2d.advanced_metrics:main',
+            ],
     },
 )

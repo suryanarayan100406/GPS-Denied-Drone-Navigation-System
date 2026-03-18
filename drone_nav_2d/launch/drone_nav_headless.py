@@ -1,50 +1,28 @@
-import os
+"""
+Headless launch without Webots simulator - for testing navigation on WSL2 where GUI is limited.
+This launches all navigation nodes with RViz for visualization and rosbag for recording.
+"""
 
+import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, ExecuteProcess, LogInfo
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
-from webots_ros2_driver.webots_launcher import WebotsLauncher
 
 
 def generate_launch_description() -> LaunchDescription:
     pkg_share = get_package_share_directory('drone_nav_2d')
     params_file = os.path.join(pkg_share, 'config', 'nav_params.yaml')
     rviz_config = os.path.join(pkg_share, 'rviz', 'drone_nav.rviz')
-    world_easy = os.path.join(pkg_share, 'worlds', 'drone_world.wbt')
-    world_hard = os.path.join(pkg_share, 'worlds', 'drone_world_hard.wbt')
     urdf_path = os.path.join(pkg_share, 'urdf', 'drone.urdf')
 
-    use_hard_world = LaunchConfiguration('use_hard_world')
     bag_output = LaunchConfiguration('bag_output')
 
     with open(urdf_path, 'r', encoding='utf-8') as f:
         robot_description = f.read()
 
-    # Use easy world by default for demo
-    webots = WebotsLauncher(
-        world=world_easy,
-        ros2_supervisor=True,
-    )
-
-    bridge_driver = Node(
-        package='webots_ros2_driver',
-        executable='driver',
-        output='screen',
-        additional_env={
-            'WEBOTS_CONTROLLER_URL': 'drone',
-        },
-        parameters=[
-            {'robot_description': robot_description},
-        ],
-        remappings=[
-            ('/gps', '/webots/drone/gps'),
-            ('/scan', '/webots/drone/scan'),
-            ('/cmd_vel', '/cmd_vel'),
-        ],
-    )
-
+    # Map publisher node
     map_publisher = Node(
         package='drone_nav_2d',
         executable='map_publisher',
@@ -53,6 +31,7 @@ def generate_launch_description() -> LaunchDescription:
         parameters=[params_file],
     )
 
+    # Path planner node
     planner = Node(
         package='drone_nav_2d',
         executable='path_planner',
@@ -61,6 +40,18 @@ def generate_launch_description() -> LaunchDescription:
         parameters=[params_file],
     )
 
+    # Create synthetic drone pose publisher for testing (since no Webots)
+    synthetic_pose = ExecuteProcess(
+        cmd=[
+            'ros2', 'topic', 'pub', '-1',
+            '/drone_pose',
+            'geometry_msgs/PoseStamped',
+            '{header: {frame_id: "map"}, pose: {position: {x: -4.0, y: 0.0, z: 0.5}, orientation: {w: 1.0}}}'
+        ],
+        output='screen',
+    )
+
+    # Drone controller node
     controller = Node(
         package='drone_nav_2d',
         executable='drone_controller',
@@ -69,6 +60,7 @@ def generate_launch_description() -> LaunchDescription:
         parameters=[params_file],
     )
 
+    # Obstacle avoidance node
     avoidance = Node(
         package='drone_nav_2d',
         executable='obstacle_avoidance',
@@ -77,6 +69,7 @@ def generate_launch_description() -> LaunchDescription:
         parameters=[params_file],
     )
 
+    # Metrics logger node
     metrics = Node(
         package='drone_nav_2d',
         executable='metrics_logger',
@@ -85,6 +78,7 @@ def generate_launch_description() -> LaunchDescription:
         parameters=[params_file],
     )
 
+    # RViz2 for visualization
     rviz = Node(
         package='rviz2',
         executable='rviz2',
@@ -93,6 +87,7 @@ def generate_launch_description() -> LaunchDescription:
         output='screen',
     )
 
+    # rosbag2 recording for video/data capture
     rosbag = ExecuteProcess(
         cmd=[
             'ros2',
@@ -114,27 +109,20 @@ def generate_launch_description() -> LaunchDescription:
         output='screen',
     )
 
-    actions = [
-        DeclareLaunchArgument(
-            'use_hard_world',
-            default_value='false',
-            description='Set true to launch drone_world_hard.wbt',
-        ),
+    return LaunchDescription([
         DeclareLaunchArgument(
             'bag_output',
             default_value='bags/drone_nav_run',
             description='Output directory for rosbag2 recording',
         ),
-        LogInfo(msg=['Launching drone navigation demo (easy world configuration)']),
-        webots,
-        bridge_driver,
+        LogInfo(msg=['Launching drone navigation (headless mode - no Webots simulator)']),
+        LogInfo(msg=['Recording topics to rosbag2, visualizing in RViz']),
         map_publisher,
         planner,
+        synthetic_pose,
         controller,
         avoidance,
         metrics,
         rviz,
         rosbag,
-    ]
-
-    return LaunchDescription(actions)
+    ])
