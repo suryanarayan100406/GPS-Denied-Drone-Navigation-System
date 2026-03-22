@@ -57,27 +57,36 @@ drone_controller_3d:
 # ===== PATH PLANNER 3D =====
 path_planner_3d:
   ros__parameters:
+    # PRM (Probabilistic Roadmap) Parameters
+    prm_num_samples: 600           # Number of random samples for 3D roadmap
+    prm_connection_radius: 2.5     # Connection distance threshold
+    prm_max_connections: 20        # Maximum neighbors per node
+    
+    # Informed RRT* Parameters (Asymptotically Optimal)
+    irrt_max_iterations: 4000      # Maximum iterations
+    irrt_step_size_m: 0.5          # Step size (50cm)
+    irrt_goal_sample_rate: 0.12    # Probability of sampling goal (12%)
+    irrt_rewire_radius_factor: 35.0   # Factor for dynamic rewiring radius
+    
+    # D* Lite Parameters (Dynamic Replanning)
+    dstar_enabled: true            # Enable D* Lite for moving obstacles
+    
     # Voxel grid parameters
-    voxel_resolution: 0.2    # 20cm voxels
-    world_width_m: 10.0      # X dimension
-    world_height_m: 8.0      # Z dimension (vertical)
-    world_depth_m: 10.0      # Y dimension
+    voxel_resolution: 0.2          # 20cm voxels
+    world_width_m: 10.0            # X dimension
+    world_height_m: 8.0            # Z dimension (vertical)
+    world_depth_m: 10.0            # Y dimension
     
     # Inflation/safety
-    inflation_radius_m: 0.4  # 40cm safety margin
-    drone_radius_m: 0.2      # 20cm drone radius
+    inflation_radius_m: 0.4        # 40cm safety margin
+    drone_radius_m: 0.2            # 20cm drone radius
     
     # Planning parameters
-    replan_rate_hz: 1.0      # 1 Hz replanning
+    replan_rate_hz: 1.0            # 1 Hz replanning
     
     # Default start/goal positions (world coords)
     start_xyz: [-4.0, 0.0, 1.0]
     goal_xyz: [4.0, 0.0, 2.0]
-    
-    # RRT parameters (fallback planner)
-    rrt_max_iterations: 3000
-    rrt_step_size_m: 0.4     # 40cm step
-    rrt_goal_sample_rate: 0.15
 
 # ===== MAP PUBLISHER 3D =====
 map_publisher_3d:

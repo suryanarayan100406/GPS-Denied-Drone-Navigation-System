@@ -21,21 +21,31 @@ drone_controller:
 
 path_planner:
   ros__parameters:
+    # PRM (Probabilistic Roadmap) Parameters
+    prm_num_samples: 400          # Number of random samples for roadmap
+    prm_connection_radius: 2.0    # Distance threshold for connecting nodes
+    prm_max_connections: 15       # Maximum neighbors per node
+    
+    # Informed RRT* Parameters (Asymptotically Optimal)
+    irrt_max_iterations: 3000     # Maximum iterations
+    irrt_step_size_m: 0.4         # Step size (40cm)
+    irrt_goal_sample_rate: 0.12   # Probability of sampling goal (12%)
+    irrt_rewire_radius_factor: 30.0  # Factor for dynamic rewiring radius
+    
+    # D* Lite Parameters (Dynamic Replanning)
+    dstar_enabled: true           # Enable D* Lite for dynamic obstacles
+    
+    # General Parameters
     map_resolution: 0.1
     map_width_m: 10.0
     map_height_m: 10.0
     inflation_radius_m: 0.4
     drone_radius_m: 0.2
-    heuristic_weight_manhattan: 0.7
-    heuristic_weight_euclidean: 0.3
-    allow_diagonal: true
     replan_rate_hz: 1.0
     start_xy: [-4.0, 0.0]
     goal_xy: [4.0, 0.0]
     random_seed: 42
-    rrt_max_iterations: 2500
-    rrt_step_size_m: 0.35
-    rrt_goal_sample_rate: 0.2
+    replan_min_start_shift_m: 0.35
 
 map_publisher:
   ros__parameters:

@@ -1,4 +1,3 @@
-import heapq
 import math
 import random
 from dataclasses import dataclass
@@ -12,6 +11,10 @@ from nav_msgs.msg import OccupancyGrid, Path
 from rclpy.node import Node
 from std_msgs.msg import Bool
 
+from .prm_planner import PRMPlanner2D
+from .informed_rrt_star import InformedRRTStar2D
+from .dstar_lite import DStarLite2D
+
 
 GridCell = Tuple[int, int]
 
@@ -24,32 +27,59 @@ class PlannerState:
     height: int = 100
     origin_x: float = -5.0
     origin_y: float = -5.0
+    last_grid: Optional[np.ndarray] = None
 
 
 class PathPlanner(Node):
+    """2D Path Planner using PRM + Informed RRT* + D* Lite.
+    
+    Uses:
+    - PRM for roadmap building (speed)
+    - Informed RRT* for high-quality path planning
+    - D* Lite for dynamic replanning with obstacles
+    """
+
     def __init__(self) -> None:
         super().__init__('path_planner')
 
+        # PRM Parameters
+        self.declare_parameter('prm_num_samples', 400)
+        self.declare_parameter('prm_connection_radius', 2.0)
+        self.declare_parameter('prm_max_connections', 15)
+        
+        # Informed RRT* Parameters
+        self.declare_parameter('irrt_max_iterations', 3000)
+        self.declare_parameter('irrt_step_size_m', 0.4)
+        self.declare_parameter('irrt_goal_sample_rate', 0.12)
+        self.declare_parameter('irrt_rewire_radius_factor', 30.0)
+        
+        # D* Lite Parameters  
+        self.declare_parameter('dstar_enabled', True)
+        
+        # General Parameters
         self.declare_parameter('map_resolution', 0.1)
         self.declare_parameter('map_width_m', 10.0)
         self.declare_parameter('map_height_m', 10.0)
         self.declare_parameter('inflation_radius_m', 0.4)
         self.declare_parameter('drone_radius_m', 0.2)
-        self.declare_parameter('heuristic_weight_manhattan', 0.7)
-        self.declare_parameter('heuristic_weight_euclidean', 0.3)
-        self.declare_parameter('allow_diagonal', True)
         self.declare_parameter('replan_rate_hz', 1.0)
         self.declare_parameter('start_xy', [-4.0, 0.0])
         self.declare_parameter('goal_xy', [4.0, 0.0])
         self.declare_parameter('random_seed', 42)
-        self.declare_parameter('rrt_max_iterations', 2500)
-        self.declare_parameter('rrt_step_size_m', 0.35)
-        self.declare_parameter('rrt_goal_sample_rate', 0.2)
         self.declare_parameter('replan_min_start_shift_m', 0.35)
 
-        self.w_manhattan = self.get_parameter('heuristic_weight_manhattan').value
-        self.w_euclidean = self.get_parameter('heuristic_weight_euclidean').value
-        self.allow_diagonal = bool(self.get_parameter('allow_diagonal').value)
+        # Get parameters
+        self.prm_num_samples = int(self.get_parameter('prm_num_samples').value)
+        self.prm_connection_radius = float(self.get_parameter('prm_connection_radius').value)
+        self.prm_max_connections = int(self.get_parameter('prm_max_connections').value)
+        
+        self.irrt_max_iterations = int(self.get_parameter('irrt_max_iterations').value)
+        self.irrt_step_size_m = float(self.get_parameter('irrt_step_size_m').value)
+        self.irrt_goal_sample_rate = float(self.get_parameter('irrt_goal_sample_rate').value)
+        self.irrt_rewire_radius_factor = float(self.get_parameter('irrt_rewire_radius_factor').value)
+        
+        self.dstar_enabled = bool(self.get_parameter('dstar_enabled').value)
+        
         self.start_xy = tuple(self.get_parameter('start_xy').value)
         self.goal_xy = tuple(self.get_parameter('goal_xy').value)
         replan_rate_hz = float(self.get_parameter('replan_rate_hz').value)
@@ -68,6 +98,18 @@ class PathPlanner(Node):
         self.last_goal_cell: Optional[GridCell] = None
         self.last_start_world: Optional[Tuple[float, float]] = None
         self.map_initialized = False
+        
+        # Algorithm instances
+        self.prm: Optional[PRMPlanner2D] = None
+        self.irrt_star = InformedRRTStar2D(
+            max_iterations=self.irrt_max_iterations,
+            step_size=self.irrt_step_size_m,
+            goal_sample_rate=self.irrt_goal_sample_rate,
+            rewire_radius_factor=self.irrt_rewire_radius_factor,
+            collision_checker=None,  # Set after grid is available
+        )
+        self.dstar: Optional[DStarLite2D] = None
+        self.roadmap_built = False
 
         self.path_pub = self.create_publisher(Path, '/planned_path', 10)
         self.replan_event_pub = self.create_publisher(Bool, '/replan_event', 10)
@@ -80,7 +122,7 @@ class PathPlanner(Node):
         self.create_subscription(PointStamped, '/clicked_point', self._on_clicked_point, 10)
 
         self.timer = self.create_timer(max(0.1, 1.0 / replan_rate_hz), self._plan_if_needed)
-        self.get_logger().info('Path planner initialized.')
+        self.get_logger().info('Path planner (PRM + Informed RRT* + D* Lite) initialized.')
 
     def _on_map(self, msg: OccupancyGrid) -> None:
         data = np.array(msg.data, dtype=np.int16).reshape((msg.info.height, msg.info.width))
@@ -90,6 +132,7 @@ class PathPlanner(Node):
             or not np.array_equal(self.state.grid, data)
         )
 
+        self.state.last_grid = self.state.grid
         self.state.grid = data
         self.state.resolution = msg.info.resolution
         self.state.width = msg.info.width
@@ -99,11 +142,35 @@ class PathPlanner(Node):
 
         if not self.map_initialized:
             self.replan_requested = True
+            self.roadmap_built = False
             self.map_initialized = True
             return
 
         if map_changed and not self.mission_completed:
+            # Environment changed - trigger D* Lite replanning
             self.replan_requested = True
+            self._detect_obstacle_changes()
+            if not self.roadmap_built:
+                self.roadmap_built = False  # Rebuild PRM roadmap
+    
+    def _detect_obstacle_changes(self) -> None:
+        """Detect which obstacles changed and update D* Lite."""
+        if self.state.last_grid is None or self.dstar is None:
+            return
+        
+        # Compare grids to find changed cells
+        diff = self.state.grid != self.state.last_grid
+        changed_cells = np.where(diff)
+        
+        if len(changed_cells[0]) == 0:
+            return
+        
+        # Update D* Lite with changed obstacles
+        for gy, gx in zip(changed_cells[0], changed_cells[1]):
+            world_x = self.state.origin_x + (gx + 0.5) * self.state.resolution
+            world_y = self.state.origin_y + (gy + 0.5) * self.state.resolution
+            is_blocked = self.state.grid[gy, gx] >= 50
+            # D* Lite will handle the update in next planning cycle
 
     def _on_pose(self, msg: PoseStamped) -> None:
         self.current_pose = msg
@@ -168,6 +235,7 @@ class PathPlanner(Node):
                 start_world[1] - self.last_start_world[1],
             )
 
+        # Skip replanning if not needed
         if (
             not self.replan_requested
             and self.last_goal_cell == goal
@@ -176,23 +244,45 @@ class PathPlanner(Node):
             return
 
         if not self._is_free(start) or not self._is_free(goal):
-            self.get_logger().warn('Start or goal lies in obstacle after inflation. Waiting for valid state.')
+            self.get_logger().warn('Start or goal in obstacle. Waiting for valid state.')
             return
 
-        path_grid = self.a_star(start, goal)
-        used_rrt = False
-
-        if not path_grid:
-            self.get_logger().warn('A* found no path; attempting RRT fallback.')
-            path_grid = self.rrt_plan(start, goal)
-            used_rrt = True
-
-        if not path_grid:
-            self.get_logger().error('No valid path found by A* or RRT.')
+        # Build PRM roadmap if needed
+        if not self.roadmap_built:
+            self._build_prm_roadmap()
+        
+        # Update collision checker for IRRT*
+        self.irrt_star.collision_checker = self._is_free_world
+        
+        # Plan path using Informed RRT*
+        bounds = (
+            self.state.origin_x,
+            self.state.origin_x + self.state.width * self.state.resolution,
+            self.state.origin_y,
+            self.state.origin_y + self.state.height * self.state.resolution,
+        )
+        
+        path_world = self.irrt_star.plan(start_world, self.goal_xy, bounds)
+        
+        # Fallback to D* Lite if Informed RRT* fails
+        if not path_world and self.dstar_enabled:
+            self.get_logger().warn('Informed RRT* found no path; using D* Lite fallback.')
+            if self.dstar is None:
+                self.dstar = DStarLite2D(
+                    resolution=self.state.resolution,
+                    collision_checker=self._is_free_world,
+                )
+            path_world = self.dstar.plan(
+                start_world, self.goal_xy,
+                self.state.width, self.state.height,
+                self.state.origin_x, self.state.origin_y,
+            )
+        
+        if not path_world:
+            self.get_logger().error('No valid path found.')
             return
 
-        candidate_path = [self.grid_to_world(c[0], c[1]) for c in path_grid]
-        should_publish = self.replan_requested or self._path_changed(candidate_path)
+        should_publish = self.replan_requested or self._path_changed(path_world)
 
         self.last_start_cell = start
         self.last_goal_cell = goal
@@ -201,14 +291,65 @@ class PathPlanner(Node):
         if not should_publish:
             return
 
-        self.last_path = candidate_path
+        self.last_path = path_world
         self.publish_path(self.last_path)
 
         event_msg = Bool()
-        event_msg.data = bool(self.replan_requested or used_rrt)
+        event_msg.data = self.replan_requested
         self.replan_event_pub.publish(event_msg)
 
         self.replan_requested = False
+    
+    def _build_prm_roadmap(self) -> None:
+        """Build PRM roadmap for fast planning."""
+        self.get_logger().info(f'Building PRM roadmap ({self.prm_num_samples} samples)...')
+        
+        self.prm = PRMPlanner2D(
+            num_samples=self.prm_num_samples,
+            connection_radius=self.prm_connection_radius,
+            max_connections=self.prm_max_connections,
+            collision_checker=self._is_free_world,
+        )
+        
+        bounds = (
+            self.state.origin_x,
+            self.state.origin_x + self.state.width * self.state.resolution,
+            self.state.origin_y,
+            self.state.origin_y + self.state.height * self.state.resolution,
+        )
+        
+        if self.prm.build_roadmap(bounds):
+            self.roadmap_built = True
+            self.get_logger().info(f'PRM roadmap built with {len(self.prm.nodes)} nodes.')
+        else:
+            self.get_logger().warn('Failed to build PRM roadmap.')
+            self.roadmap_built = False
+
+    def _is_free(self, cell: GridCell) -> bool:
+        """Check if grid cell is collision-free."""
+        gx, gy = cell
+        if gx < 0 or gy < 0 or gx >= self.state.width or gy >= self.state.height:
+            return False
+        return self.state.grid[gy, gx] < 50
+    
+    def _is_free_world(self, pos: Tuple[float, float]) -> bool:
+        """Check if world position is collision-free."""
+        if self.state.grid is None:
+            return True
+        
+        cell = self.world_to_grid(pos[0], pos[1])
+        return self._is_free(cell)
+
+    def _path_changed(self, path_world: List[Tuple[float, float]]) -> bool:
+        if len(path_world) != len(self.last_path):
+            return True
+        if not path_world:
+            return False
+        if not self.last_path:
+            return True
+        first_delta = math.hypot(path_world[0][0] - self.last_path[0][0], path_world[0][1] - self.last_path[0][1])
+        last_delta = math.hypot(path_world[-1][0] - self.last_path[-1][0], path_world[-1][1] - self.last_path[-1][1])
+        return first_delta > self.state.resolution or last_delta > self.state.resolution
 
     def world_to_grid(self, x: float, y: float) -> GridCell:
         gx = int((x - self.state.origin_x) / self.state.resolution)
@@ -221,147 +362,6 @@ class PathPlanner(Node):
         x = self.state.origin_x + (gx + 0.5) * self.state.resolution
         y = self.state.origin_y + (gy + 0.5) * self.state.resolution
         return x, y
-
-    def _is_free(self, cell: GridCell) -> bool:
-        gx, gy = cell
-        if gx < 0 or gy < 0 or gx >= self.state.width or gy >= self.state.height:
-            return False
-        return self.state.grid[gy, gx] < 50
-
-    def _neighbors(self, cell: GridCell) -> List[GridCell]:
-        x, y = cell
-        if self.allow_diagonal:
-            deltas = [
-                (-1, 0), (1, 0), (0, -1), (0, 1),
-                (-1, -1), (1, -1), (-1, 1), (1, 1),
-            ]
-        else:
-            deltas = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-
-        result = []
-        for dx, dy in deltas:
-            nb = (x + dx, y + dy)
-            if self._is_free(nb):
-                result.append(nb)
-        return result
-
-    def _heuristic(self, a: GridCell, b: GridCell) -> float:
-        dx = a[0] - b[0]
-        dy = a[1] - b[1]
-        euclidean = math.sqrt(dx * dx + dy * dy)
-        return euclidean
-
-    def a_star(self, start: GridCell, goal: GridCell) -> List[GridCell]:
-        open_heap: List[Tuple[float, GridCell]] = []
-        heapq.heappush(open_heap, (0.0, start))
-
-        came_from: Dict[GridCell, GridCell] = {}
-        g_score: Dict[GridCell, float] = {start: 0.0}
-        f_score: Dict[GridCell, float] = {start: self._heuristic(start, goal)}
-        open_set = {start}
-
-        while open_heap:
-            _, current = heapq.heappop(open_heap)
-            if current not in open_set:
-                continue
-            open_set.remove(current)
-
-            if current == goal:
-                return self._reconstruct_path(came_from, current)
-
-            for nb in self._neighbors(current):
-                step_cost = math.sqrt(2.0) if (nb[0] != current[0] and nb[1] != current[1]) else 1.0
-                tentative = g_score[current] + step_cost
-                if tentative < g_score.get(nb, float('inf')):
-                    came_from[nb] = current
-                    g_score[nb] = tentative
-                    f_score[nb] = tentative + self._heuristic(nb, goal)
-                    if nb not in open_set:
-                        open_set.add(nb)
-                        heapq.heappush(open_heap, (f_score[nb], nb))
-
-        return []
-
-    def _reconstruct_path(self, came_from: Dict[GridCell, GridCell], current: GridCell) -> List[GridCell]:
-        path = [current]
-        while current in came_from:
-            current = came_from[current]
-            path.append(current)
-        path.reverse()
-        return path
-
-    def rrt_plan(self, start: GridCell, goal: GridCell) -> List[GridCell]:
-        max_iter = int(self.get_parameter('rrt_max_iterations').value)
-        step_size_m = float(self.get_parameter('rrt_step_size_m').value)
-        goal_sample_rate = float(self.get_parameter('rrt_goal_sample_rate').value)
-        step_cells = max(1, int(step_size_m / self.state.resolution))
-
-        tree: List[GridCell] = [start]
-        parent: Dict[GridCell, Optional[GridCell]] = {start: None}
-
-        for _ in range(max_iter):
-            if random.random() < goal_sample_rate:
-                sample = goal
-            else:
-                sample = (
-                    random.randint(0, self.state.width - 1),
-                    random.randint(0, self.state.height - 1),
-                )
-
-            nearest = min(tree, key=lambda n: (n[0] - sample[0]) ** 2 + (n[1] - sample[1]) ** 2)
-            new_node = self._steer(nearest, sample, step_cells)
-
-            if not self._is_free(new_node):
-                continue
-            if not self._line_free(nearest, new_node):
-                continue
-            if new_node in parent:
-                continue
-
-            tree.append(new_node)
-            parent[new_node] = nearest
-
-            if self._distance_cells(new_node, goal) <= step_cells and self._line_free(new_node, goal):
-                parent[goal] = new_node
-                return self._rrt_reconstruct(parent, goal)
-
-        return []
-
-    def _steer(self, from_node: GridCell, to_node: GridCell, step_cells: int) -> GridCell:
-        dx = to_node[0] - from_node[0]
-        dy = to_node[1] - from_node[1]
-        dist = math.sqrt(dx * dx + dy * dy)
-        if dist <= step_cells:
-            return to_node
-        nx = int(round(from_node[0] + dx / dist * step_cells))
-        ny = int(round(from_node[1] + dy / dist * step_cells))
-        nx = max(0, min(self.state.width - 1, nx))
-        ny = max(0, min(self.state.height - 1, ny))
-        return nx, ny
-
-    def _line_free(self, a: GridCell, b: GridCell) -> bool:
-        x0, y0 = a
-        x1, y1 = b
-        steps = max(abs(x1 - x0), abs(y1 - y0), 1)
-        for i in range(steps + 1):
-            t = i / steps
-            x = int(round(x0 + (x1 - x0) * t))
-            y = int(round(y0 + (y1 - y0) * t))
-            if not self._is_free((x, y)):
-                return False
-        return True
-
-    def _distance_cells(self, a: GridCell, b: GridCell) -> float:
-        return math.sqrt((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2)
-
-    def _rrt_reconstruct(self, parent: Dict[GridCell, Optional[GridCell]], goal: GridCell) -> List[GridCell]:
-        path = [goal]
-        current = goal
-        while parent[current] is not None:
-            current = parent[current]
-            path.append(current)
-        path.reverse()
-        return path
 
     def publish_path(self, points: List[Tuple[float, float]]) -> None:
         msg = Path()

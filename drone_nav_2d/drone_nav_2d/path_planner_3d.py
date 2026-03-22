@@ -1,4 +1,3 @@
-import heapq
 import math
 import random
 from dataclasses import dataclass
@@ -12,6 +11,9 @@ from rclpy.node import Node
 from std_msgs.msg import Bool
 
 from .voxel_grid import VoxelGrid
+from .prm_planner import PRMPlanner3D
+from .informed_rrt_star import InformedRRTStar3D
+from .dstar_lite import DStarLite3D
 
 
 VoxelCell = Tuple[int, int, int]
@@ -25,16 +27,34 @@ class Planner3DState:
 
 
 class PathPlanner3D(Node):
-    """3D A* path planner for autonomous drone navigation.
+    """3D Path Planner using PRM + Informed RRT* + D* Lite.
     
-    Uses voxel-based grid and A* algorithm with 26-connectivity.
-    Handles dynamic replanning when obstacles change or new goals are set.
+    Uses:
+    - PRM for roadmap building (speed)
+    - Informed RRT* for high-quality path planning
+    - D* Lite for dynamic replanning with moving obstacles
+    
+    Operates on voxel-based 3D grid with 26-connectivity support.
     """
 
     def __init__(self) -> None:
         super().__init__('path_planner_3d')
 
-        # Declare parameters
+        # PRM Parameters
+        self.declare_parameter('prm_num_samples', 600)
+        self.declare_parameter('prm_connection_radius', 2.5)
+        self.declare_parameter('prm_max_connections', 20)
+        
+        # Informed RRT* Parameters
+        self.declare_parameter('irrt_max_iterations', 4000)
+        self.declare_parameter('irrt_step_size_m', 0.5)
+        self.declare_parameter('irrt_goal_sample_rate', 0.12)
+        self.declare_parameter('irrt_rewire_radius_factor', 35.0)
+        
+        # D* Lite Parameters
+        self.declare_parameter('dstar_enabled', True)
+        
+        # Voxel Parameters
         self.declare_parameter('voxel_resolution', 0.2)
         self.declare_parameter('world_width_m', 10.0)
         self.declare_parameter('world_height_m', 8.0)
@@ -44,11 +64,20 @@ class PathPlanner3D(Node):
         self.declare_parameter('replan_rate_hz', 1.0)
         self.declare_parameter('start_xyz', [-4.0, 0.0, 1.0])
         self.declare_parameter('goal_xyz', [4.0, 0.0, 2.0])
-        self.declare_parameter('rrt_max_iterations', 3000)
-        self.declare_parameter('rrt_step_size_m', 0.4)
-        self.declare_parameter('rrt_goal_sample_rate', 0.15)
 
         # Get parameters
+        self.prm_num_samples = int(self.get_parameter('prm_num_samples').value)
+        self.prm_connection_radius = float(self.get_parameter('prm_connection_radius').value)
+        self.prm_max_connections = int(self.get_parameter('prm_max_connections').value)
+        
+        self.irrt_max_iterations = int(self.get_parameter('irrt_max_iterations').value)
+        self.irrt_step_size_m = float(self.get_parameter('irrt_step_size_m').value)
+        self.irrt_goal_sample_rate = float(self.get_parameter('irrt_goal_sample_rate').value)
+        self.irrt_rewire_radius_factor = float(self.get_parameter('irrt_rewire_radius_factor').value)
+        
+        self.dstar_enabled = bool(self.get_parameter('dstar_enabled').value)
+        
+        # Voxel grid setup
         voxel_res = float(self.get_parameter('voxel_resolution').value)
         world_width = float(self.get_parameter('world_width_m').value)
         world_height = float(self.get_parameter('world_height_m').value)
@@ -78,6 +107,18 @@ class PathPlanner3D(Node):
         self.last_start_cell: Optional[VoxelCell] = None
         self.last_goal_cell: Optional[VoxelCell] = None
         self.map_initialized = False
+        
+        # Algorithm instances
+        self.prm: Optional[PRMPlanner3D] = None
+        self.irrt_star = InformedRRTStar3D(
+            max_iterations=self.irrt_max_iterations,
+            step_size=self.irrt_step_size_m,
+            goal_sample_rate=self.irrt_goal_sample_rate,
+            rewire_radius_factor=self.irrt_rewire_radius_factor,
+            collision_checker=None,
+        )
+        self.dstar: Optional[DStarLite3D] = None
+        self.roadmap_built = False
 
         # Publishers
         self.path_pub = self.create_publisher(Path, '/planned_path_3d', 10)
@@ -93,7 +134,7 @@ class PathPlanner3D(Node):
         # Timer for planning
         self.timer = self.create_timer(max(0.1, 1.0 / replan_rate), self._plan_if_needed)
 
-        self.get_logger().info('3D Path planner initialized.')
+        self.get_logger().info('3D Path planner (PRM + Informed RRT* + D* Lite) initialized.')
 
     def _on_pose(self, msg: PoseStamped) -> None:
         """Update current drone pose."""
@@ -128,11 +169,10 @@ class PathPlanner3D(Node):
         self.get_logger().info(f'New goal (RViz): ({self.goal_xyz[0]:.2f}, {self.goal_xyz[1]:.2f}, {self.goal_xyz[2]:.2f})')
 
     def _plan_if_needed(self) -> None:
-        """Main planning loop: decide if replanning is needed and compute path."""
+        """Main planning loop."""
         if self.state.voxel_grid is None:
             return
 
-        # Check if mission complete → skip planning
         if self.mission_completed and not self.replan_requested:
             return
 
@@ -150,14 +190,13 @@ class PathPlanner3D(Node):
         start_cell = self.state.voxel_grid.world_to_voxel(*start_xyz)
         goal_cell = self.state.voxel_grid.world_to_voxel(*self.goal_xyz)
 
-        # Check if replanning is necessary
+        # Check if replanning needed
         if (
             not self.replan_requested
             and self.last_goal_cell == goal_cell
             and self.last_start_cell is not None
             and self.last_start_cell == start_cell
         ):
-            # No change in start/goal → skip
             return
 
         # Validate start/goal are free
@@ -169,19 +208,43 @@ class PathPlanner3D(Node):
             self.get_logger().warn('Goal position blocked.')
             return
 
-        # Run A* planner
-        path_voxels = self.a_star(start_cell, goal_cell)
-
-        if not path_voxels:
-            self.get_logger().warn('A* found no path; trying RRT...')
-            path_voxels = self.rrt_3d(start_cell, goal_cell)
-
-        if not path_voxels:
+        # Build PRM if needed
+        if not self.roadmap_built:
+            self._build_prm_roadmap()
+        
+        # Setup collision checker
+        self.irrt_star.collision_checker = self._is_free_world
+        
+        # Plan using Informed RRT*
+        bounds = (
+            -self.state.voxel_grid.width_m / 2,
+            self.state.voxel_grid.width_m / 2,
+            -self.state.voxel_grid.depth_m / 2,
+            self.state.voxel_grid.depth_m / 2,
+            0,
+            self.state.voxel_grid.height_m,
+        )
+        
+        path_world = self.irrt_star.plan(start_xyz, self.goal_xyz, bounds)
+        
+        # Fallback to D* Lite
+        if not path_world and self.dstar_enabled:
+            self.get_logger().warn('Informed RRT* found no path; using D* Lite fallback.')
+            if self.dstar is None:
+                self.dstar = DStarLite3D(
+                    resolution=self.state.voxel_grid.resolution,
+                    collision_checker=self._is_free_world,
+                )
+            path_world = self.dstar.plan(
+                start_xyz, self.goal_xyz,
+                self.state.voxel_grid.width,
+                self.state.voxel_grid.depth,
+                self.state.voxel_grid.height,
+            )
+        
+        if not path_world:
             self.get_logger().error('No valid path found.')
             return
-
-        # Convert voxels to world coordinates
-        path_world = [self.state.voxel_grid.voxel_to_world(*v) for v in path_voxels]
 
         # Publish path
         self.publish_path(path_world)
@@ -191,197 +254,43 @@ class PathPlanner3D(Node):
 
         # Publish replan event
         event_msg = Bool()
-        event_msg.data = True
+        event_msg.data = self.replan_requested
         self.replan_event_pub.publish(event_msg)
 
         self.replan_requested = False
-
-    def a_star(self, start: VoxelCell, goal: VoxelCell) -> List[VoxelCell]:
-        """3D A* pathfinding using 26-connectivity (26-neighbor search).
+    
+    def _build_prm_roadmap(self) -> None:
+        """Build 3D PRM roadmap for fast planning."""
+        self.get_logger().info(f'Building 3D PRM roadmap ({self.prm_num_samples} samples)...')
         
-        Args:
-            start: Starting voxel (vx, vy, vz)
-            goal: Goal voxel (vx, vy, vz)
-            
-        Returns:
-            List of voxel coordinates from start to goal, or empty if no path
-        """
-        grid = self.state.voxel_grid
-
-        open_heap: List[Tuple[float, VoxelCell]] = []
-        heapq.heappush(open_heap, (0.0, start))
-
-        came_from: Dict[VoxelCell, VoxelCell] = {}
-        g_score: Dict[VoxelCell, float] = {start: 0.0}
-        f_score: Dict[VoxelCell, float] = {start: self._heuristic_3d(start, goal)}
-        open_set = {start}
-
-        iterations = 0
-        max_iterations = 100000
-
-        while open_heap and iterations < max_iterations:
-            iterations += 1
-            _, current = heapq.heappop(open_heap)
-
-            if current not in open_set:
-                continue
-            open_set.remove(current)
-
-            if current == goal:
-                return self._reconstruct_path(came_from, current)
-
-            # Explore 26 neighbors
-            for neighbor in grid.get_neighbors(*current, use_inflation=True):
-                # Calculate step cost (varies by direction)
-                step_cost = self._cost_3d(current, neighbor)
-                tentative = g_score[current] + step_cost
-
-                if tentative < g_score.get(neighbor, float('inf')):
-                    came_from[neighbor] = current
-                    g_score[neighbor] = tentative
-                    f_score[neighbor] = tentative + self._heuristic_3d(neighbor, goal)
-
-                    if neighbor not in open_set:
-                        open_set.add(neighbor)
-                        heapq.heappush(open_heap, (f_score[neighbor], neighbor))
-
-        return []  # No path found
-
-    def rrt_3d(self, start: VoxelCell, goal: VoxelCell) -> List[VoxelCell]:
-        """Rapidly-exploring Random Tree (RRT) planner for 3D space.
+        self.prm = PRMPlanner3D(
+            num_samples=self.prm_num_samples,
+            connection_radius=self.prm_connection_radius,
+            max_connections=self.prm_max_connections,
+            collision_checker=self._is_free_world,
+        )
         
-        Fallback when A* cannot find a path.
+        bounds = (
+            -self.state.voxel_grid.width_m / 2,
+            self.state.voxel_grid.width_m / 2,
+            -self.state.voxel_grid.depth_m / 2,
+            self.state.voxel_grid.depth_m / 2,
+            0,
+            self.state.voxel_grid.height_m,
+        )
         
-        Args:
-            start: Starting voxel
-            goal: Goal voxel
-            
-        Returns:
-            List of voxel coordinates or empty if no path
-        """
-        max_iter = int(self.get_parameter('rrt_max_iterations').value)
-        step_size_m = float(self.get_parameter('rrt_step_size_m').value)
-        goal_sample_rate = float(self.get_parameter('rrt_goal_sample_rate').value)
-
-        grid = self.state.voxel_grid
-        step_cells = max(1, int(step_size_m / grid.resolution))
-
-        tree: List[VoxelCell] = [start]
-        parent: Dict[VoxelCell, Optional[VoxelCell]] = {start: None}
-
-        for iteration in range(max_iter):
-            # Sample random node or goal
-            if random.random() < goal_sample_rate:
-                sample = goal
-            else:
-                sample = (
-                    random.randint(0, grid.width - 1),
-                    random.randint(0, grid.depth - 1),
-                    random.randint(0, grid.height - 1),
-                )
-
-            # Find nearest node in tree
-            nearest = min(
-                tree,
-                key=lambda n: (n[0] - sample[0]) ** 2 + (n[1] - sample[1]) ** 2 + (n[2] - sample[2]) ** 2,
-            )
-
-            # Steer toward sample
-            new_node = self._steer_3d(nearest, sample, step_cells)
-
-            # Check validity
-            if not grid.is_free(*grid.voxel_to_world(*new_node), use_inflation=True):
-                continue
-            
-            if new_node in parent:
-                continue
-
-            tree.append(new_node)
-            parent[new_node] = nearest
-
-            # Check if goal reached
-            if self._distance_3d(new_node, goal) <= step_cells:
-                parent[goal] = new_node
-                return self._rrt_reconstruct(parent, goal)
-
-        return []  # No path found
-
-    @staticmethod
-    def _heuristic_3d(a: VoxelCell, b: VoxelCell) -> float:
-        """3D Euclidean distance heuristic."""
-        dx = a[0] - b[0]
-        dy = a[1] - b[1]
-        dz = a[2] - b[2]
-        return math.sqrt(dx * dx + dy * dy + dz * dz)
-
-    @staticmethod
-    def _cost_3d(a: VoxelCell, b: VoxelCell) -> float:
-        """Calculate movement cost between two voxels (26-connectivity).
-        
-        Cardinal (6 directions): 1.0
-        Face diagonal (12 directions): sqrt(2) ≈ 1.414
-        Space diagonal (8 directions): sqrt(3) ≈ 1.732
-        """
-        dx = abs(a[0] - b[0])
-        dy = abs(a[1] - b[1])
-        dz = abs(a[2] - b[2])
-        
-        # Count number of non-zero differences
-        non_zero = (dx > 0) + (dy > 0) + (dz > 0)
-        
-        if non_zero == 1:
-            return 1.0  # Cardinal
-        elif non_zero == 2:
-            return math.sqrt(2)  # Face diagonal
-        else:  # non_zero == 3
-            return math.sqrt(3)  # Space diagonal
-
-    @staticmethod
-    def _distance_3d(a: VoxelCell, b: VoxelCell) -> float:
-        """3D Euclidean distance."""
-        return math.sqrt((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2 + (a[2] - b[2]) ** 2)
-
-    def _steer_3d(self, from_node: VoxelCell, to_node: VoxelCell, step_cells: int) -> VoxelCell:
-        """Steer from one node toward another by step_cells voxels."""
-        dx = to_node[0] - from_node[0]
-        dy = to_node[1] - from_node[1]
-        dz = to_node[2] - from_node[2]
-        dist = math.sqrt(dx * dx + dy * dy + dz * dz)
-
-        if dist <= step_cells:
-            return to_node
-
-        nx = int(round(from_node[0] + dx / dist * step_cells))
-        ny = int(round(from_node[1] + dy / dist * step_cells))
-        nz = int(round(from_node[2] + dz / dist * step_cells))
-
-        grid = self.state.voxel_grid
-        nx = max(0, min(grid.width - 1, nx))
-        ny = max(0, min(grid.depth - 1, ny))
-        nz = max(0, min(grid.height - 1, nz))
-
-        return nx, ny, nz
-
-    @staticmethod
-    def _reconstruct_path(came_from: Dict[VoxelCell, VoxelCell], current: VoxelCell) -> List[VoxelCell]:
-        """Reconstruct path from came_from map."""
-        path = [current]
-        while current in came_from:
-            current = came_from[current]
-            path.append(current)
-        path.reverse()
-        return path
-
-    @staticmethod
-    def _rrt_reconstruct(parent: Dict[VoxelCell, Optional[VoxelCell]], goal: VoxelCell) -> List[VoxelCell]:
-        """Reconstruct RRT path from parent map."""
-        path = [goal]
-        current = goal
-        while parent[current] is not None:
-            current = parent[current]
-            path.append(current)
-        path.reverse()
-        return path
+        if self.prm.build_roadmap(bounds):
+            self.roadmap_built = True
+            self.get_logger().info(f'3D PRM roadmap built with {len(self.prm.nodes)} nodes.')
+        else:
+            self.get_logger().warn('Failed to build 3D PRM roadmap.')
+            self.roadmap_built = False
+    
+    def _is_free_world(self, pos: Tuple[float, float, float]) -> bool:
+        """Check if 3D world position is collision-free."""
+        if self.state.voxel_grid is None:
+            return True
+        return self.state.voxel_grid.is_free(pos[0], pos[1], pos[2], use_inflation=True)
 
     def publish_path(self, points: List[Tuple[float, float, float]]) -> None:
         """Publish path as ROS message."""

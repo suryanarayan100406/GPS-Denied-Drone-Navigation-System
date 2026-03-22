@@ -5,7 +5,8 @@
 This is a complete upgrade of the 2D drone navigation system to **full 3D autonomous drone navigation** with realistic game-like environments. The system implements:
 
 - **Full 6-DoF Quadrotor Control**: Cascaded PID loops for position, velocity, and attitude control
-- **Voxel-Based 3D Pathfinding**: A* + RRT algorithms operating on 3D occupancy grids
+- **Advanced 3D Pathfinding**: PRM + Informed RRT* + D* Lite algorithms on 3D occupancy grids
+- **Dynamic Obstacle Handling**: D* Lite for efficient replanning with moving obstacles
 - **Four Realistic 3D Environments**: Urban, Forest, Warehouse, Mixed scenario
 - **Real-time Obstacle Avoidance**: 3D potential field methods from lidar data
 - **Backward Compatible**: 2D system still available; choose at launch time
@@ -52,7 +53,7 @@ Use **Publish Point** tool to click a 3D location → drone will navigate there
 ```
 Map Publisher 3D (Voxel Grid)
         ↓
-Path Planner 3D (A*/RRT on Voxels)
+Path Planner 3D (PRM + Informed RRT* + D* Lite)
         ↓
 Drone Controller 3D (6-DoF Cascaded PID)
         ↓
@@ -77,16 +78,16 @@ Webots Simulator → Metrics Logger
 - Performance: <1ms per query
 
 #### 2. **Path Planner 3D** (`path_planner_3d.py`)
-- **A* Algorithm**:
-  - 26-connectivity (6 cardinal + 12 face diagonal + 8 corner directions)
-  - Variable cost: 1.0 (cardinal), √2 (diagonal), √3 (corner)
-  - Euclidean heuristic
-  
-- **RRT Fallback**:
-  - 3000 iterations max
-  - 40cm step size
-  - 15% goal biasing
-  - Line-of-sight validation
+**Uses hybrid algorithm strategy:**
+- **PRM (Probabilistic Roadmap)**: Builds reusable roadmap with 600 samples, connection radius 2.5m
+- **Informed RRT***: Primary planner with asymptotic optimality, 4000 iterations, informed sampling
+- **D* Lite**: Dynamic replanning when obstacles move or appear
+
+**Features:**
+- 26-connectivity support (6 cardinal + 12 face diagonal + 8 corner)
+- Variable cost: 1.0 (cardinal), √2 (diagonal), √3 (corner)
+- Incremental updates for dynamic environments
+- Fallback between algorithms for robustness
 
 **Publishes:** `/planned_path_3d` (Path msg with 3D waypoints)
 
