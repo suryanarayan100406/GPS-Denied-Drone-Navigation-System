@@ -1,22 +1,15 @@
-#VRML_SIM R2025a utf8
+#VRML_SIM R2023b utf8
 # Mixed 3D World - Combines urban, forest, and warehouse environments
 # Most challenging scenario with diverse obstacle types
 
 WorldInfo {
   title "GPS-Denied Mixed Environment Drone Navigation"
   basicTimeStep 8
-  physics "default"
-  gravity 0 0 -9.81
 }
 
 Viewpoint {
   position 0 -20 8
   orientation 1 0 0 1.57
-}
-
-Background {
-  skyColor [0.55 0.65 0.9]
-  bottomColor [0.3 0.45 0.3]
 }
 
 DirectionalLight {
@@ -33,7 +26,7 @@ Solid {
     Shape {
       appearance PBRAppearance {
         baseColor 0.35 0.5 0.25
-        metallic 0
+        metalness 0
         roughness 0.95
       }
       geometry Box { size 20 20 0.2 }
@@ -49,7 +42,7 @@ Solid {
     Shape {
       appearance PBRAppearance {
         baseColor 0.35 0.35 0.35
-        metallic 0
+        metalness 0
         roughness 0.9
       }
       geometry Box { size 15 20 0.2 }
@@ -127,7 +120,7 @@ Solid {
     Shape {
       appearance PBRAppearance {
         baseColor 0.65 0.65 0.7
-        metallic 0.1
+        metalness 0.1
         roughness 0.7
       }
       geometry Box { size 2.5 2 2.5 }
@@ -143,7 +136,7 @@ Solid {
     Shape {
       appearance PBRAppearance {
         baseColor 0.7 0.68 0.65
-        metallic 0
+        metalness 0
         roughness 0.8
       }
       geometry Box { size 2 1.8 1.8 }
@@ -159,7 +152,7 @@ Solid {
     Shape {
       appearance PBRAppearance {
         baseColor 0.6 0.62 0.68
-        metallic 0.05
+        metalness 0.05
         roughness 0.75
       }
       geometry Box { size 1.5 1.5 3 }
@@ -197,7 +190,7 @@ Solid {
     Shape {
       appearance PBRAppearance {
         baseColor 0.45 0.45 0.5
-        metallic 0.2
+        metalness 0.2
         roughness 0.6
       }
       geometry Box { size 4 3.5 5 }
@@ -214,7 +207,7 @@ Solid {
     Shape {
       appearance PBRAppearance {
         baseColor 0.5 0.5 0.5
-        metallic 0.9
+        metalness 0.9
         roughness 0.35
       }
       geometry Box { size 1.5 0.3 3 }
@@ -231,7 +224,7 @@ Solid {
     Shape {
       appearance PBRAppearance {
         baseColor 0.3 0.3 0.35
-        metallic 0.5
+        metalness 0.5
         roughness 0.4
       }
       geometry Box { size 0.25 2 0.25 }
@@ -251,7 +244,7 @@ Robot {
     Shape {
       appearance PBRAppearance {
         baseColor 0.15 0.2 0.28
-        metallic 0.5
+        metalness 0.5
         roughness 0.3
       }
       geometry Box { size 0.35 0.35 0.1 }
@@ -266,5 +259,5 @@ Robot {
     }
   ]
   name "drone"
-  controller "webots_ros2_driver"
+  controller "<extern>"
 }

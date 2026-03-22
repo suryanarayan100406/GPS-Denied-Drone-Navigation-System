@@ -65,7 +65,7 @@ def _build_actions(context):
         executable='driver',
         output='screen',
         additional_env={
-            'WEBOTS_CONTROLLER_URL': 'drone',
+            'WEBOTS_CONTROLLER_URL': 'tcp://127.0.0.1:1234/drone',
         },
         parameters=[
             {'robot_description': robot_description},
