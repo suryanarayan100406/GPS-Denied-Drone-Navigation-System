@@ -14,6 +14,7 @@ from .voxel_grid import VoxelGrid
 from .prm_planner import PRMPlanner3D
 from .informed_rrt_star import InformedRRTStar3D
 from .dstar_lite import DStarLite3D
+from .a_star_planner import AStarPlanner3D
 
 
 VoxelCell = Tuple[int, int, int]
@@ -54,6 +55,12 @@ class PathPlanner3D(Node):
         # D* Lite Parameters
         self.declare_parameter('dstar_enabled', True)
         
+        # A* Parameters
+        self.declare_parameter('astar_enabled', True)
+        self.declare_parameter('astar_heuristic_weight_manhattan', 0.5)
+        self.declare_parameter('astar_heuristic_weight_euclidean', 0.5)
+        self.declare_parameter('astar_allow_diagonal', True)
+        
         # Voxel Parameters
         self.declare_parameter('voxel_resolution', 0.2)
         self.declare_parameter('world_width_m', 10.0)
@@ -76,6 +83,11 @@ class PathPlanner3D(Node):
         self.irrt_rewire_radius_factor = float(self.get_parameter('irrt_rewire_radius_factor').value)
         
         self.dstar_enabled = bool(self.get_parameter('dstar_enabled').value)
+        
+        self.astar_enabled = bool(self.get_parameter('astar_enabled').value)
+        self.astar_heuristic_weight_manhattan = float(self.get_parameter('astar_heuristic_weight_manhattan').value)
+        self.astar_heuristic_weight_euclidean = float(self.get_parameter('astar_heuristic_weight_euclidean').value)
+        self.astar_allow_diagonal = bool(self.get_parameter('astar_allow_diagonal').value)
         
         # Voxel grid setup
         voxel_res = float(self.get_parameter('voxel_resolution').value)
@@ -118,6 +130,11 @@ class PathPlanner3D(Node):
             collision_checker=None,
         )
         self.dstar: Optional[DStarLite3D] = None
+        self.astar = AStarPlanner3D(
+            heuristic_weight_manhattan=self.astar_heuristic_weight_manhattan,
+            heuristic_weight_euclidean=self.astar_heuristic_weight_euclidean,
+            allow_diagonal=self.astar_allow_diagonal,
+        )
         self.roadmap_built = False
 
         # Publishers
@@ -208,43 +225,65 @@ class PathPlanner3D(Node):
             self.get_logger().warn('Goal position blocked.')
             return
 
-        # Build PRM if needed
-        if not self.roadmap_built:
-            self._build_prm_roadmap()
+        path_world = None
         
-        # Setup collision checker
-        self.irrt_star.collision_checker = self._is_free_world
+        # Strategy 1: Try A* (fastest voxel-based planning)
+        if self.astar_enabled:
+            try:
+                voxel_grid_data = self.state.voxel_grid.get_grid()
+                path_voxel = self.astar.plan(start_cell, goal_cell, voxel_grid_data)
+                if path_voxel:
+                    path_world = [self.state.voxel_grid.voxel_to_world(*vc) for vc in path_voxel]
+                    self.get_logger().info(f'A* found path with {len(path_world)} waypoints.')
+            except Exception as e:
+                self.get_logger().warn(f'A* planning failed: {e}')
         
-        # Plan using Informed RRT*
-        bounds = (
-            -self.state.voxel_grid.width_m / 2,
-            self.state.voxel_grid.width_m / 2,
-            -self.state.voxel_grid.depth_m / 2,
-            self.state.voxel_grid.depth_m / 2,
-            0,
-            self.state.voxel_grid.height_m,
-        )
+        # Strategy 2: Try Informed RRT* with PRM roadmap
+        if not path_world:
+            if not self.roadmap_built:
+                self._build_prm_roadmap()
+            
+            self.irrt_star.collision_checker = self._is_free_world
+            bounds = (
+                -self.state.voxel_grid.width_m / 2,
+                self.state.voxel_grid.width_m / 2,
+                -self.state.voxel_grid.depth_m / 2,
+                self.state.voxel_grid.depth_m / 2,
+                0,
+                self.state.voxel_grid.height_m,
+            )
+            
+            try:
+                path_world = self.irrt_star.plan(start_xyz, self.goal_xyz, bounds)
+                if path_world:
+                    self.get_logger().info(f'Informed RRT* found path with {len(path_world)} waypoints.')
+            except Exception as e:
+                self.get_logger().warn(f'Informed RRT* planning failed: {e}')
         
-        path_world = self.irrt_star.plan(start_xyz, self.goal_xyz, bounds)
-        
-        # Fallback to D* Lite
+        # Strategy 3: Fallback to D* Lite
         if not path_world and self.dstar_enabled:
-            self.get_logger().warn('Informed RRT* found no path; using D* Lite fallback.')
+            self.get_logger().warn('A* and Informed RRT* failed; using D* Lite fallback.')
             if self.dstar is None:
                 self.dstar = DStarLite3D(
                     resolution=self.state.voxel_grid.resolution,
                     collision_checker=self._is_free_world,
                 )
-            path_world = self.dstar.plan(
-                start_xyz, self.goal_xyz,
-                self.state.voxel_grid.width,
-                self.state.voxel_grid.depth,
-                self.state.voxel_grid.height,
-            )
+            try:
+                path_world = self.dstar.plan(
+                    start_xyz, self.goal_xyz,
+                    self.state.voxel_grid.width,
+                    self.state.voxel_grid.depth,
+                    self.state.voxel_grid.height,
+                )
+                if path_world:
+                    self.get_logger().info(f'D* Lite found path with {len(path_world)} waypoints.')
+            except Exception as e:
+                self.get_logger().warn(f'D* Lite planning failed: {e}')
         
         if not path_world:
-            self.get_logger().error('No valid path found.')
-            return
+            # Fallback: Return to starting position when all planners fail
+            self.get_logger().warn('All planning tiers failed. Returning to starting position.')
+            path_world = [start_xyz, self.start_xyz]
 
         # Publish path
         self.publish_path(path_world)

@@ -11,6 +11,7 @@ from nav_msgs.msg import OccupancyGrid, Path
 from rclpy.node import Node
 from std_msgs.msg import Bool
 
+from .a_star_planner import AStarPlanner2D
 from .prm_planner import PRMPlanner2D
 from .informed_rrt_star import InformedRRTStar2D
 from .dstar_lite import DStarLite2D
@@ -42,6 +43,12 @@ class PathPlanner(Node):
     def __init__(self) -> None:
         super().__init__('path_planner')
 
+        # A* Parameters
+        self.declare_parameter('astar_enabled', True)
+        self.declare_parameter('astar_heuristic_weight_manhattan', 0.5)
+        self.declare_parameter('astar_heuristic_weight_euclidean', 0.5)
+        self.declare_parameter('astar_allow_diagonal', True)
+        
         # PRM Parameters
         self.declare_parameter('prm_num_samples', 400)
         self.declare_parameter('prm_connection_radius', 2.0)
@@ -69,6 +76,11 @@ class PathPlanner(Node):
         self.declare_parameter('replan_min_start_shift_m', 0.35)
 
         # Get parameters
+        self.astar_enabled = bool(self.get_parameter('astar_enabled').value)
+        self.astar_heuristic_weight_manhattan = float(self.get_parameter('astar_heuristic_weight_manhattan').value)
+        self.astar_heuristic_weight_euclidean = float(self.get_parameter('astar_heuristic_weight_euclidean').value)
+        self.astar_allow_diagonal = bool(self.get_parameter('astar_allow_diagonal').value)
+        
         self.prm_num_samples = int(self.get_parameter('prm_num_samples').value)
         self.prm_connection_radius = float(self.get_parameter('prm_connection_radius').value)
         self.prm_max_connections = int(self.get_parameter('prm_max_connections').value)
@@ -100,6 +112,12 @@ class PathPlanner(Node):
         self.map_initialized = False
         
         # Algorithm instances
+        self.astar = AStarPlanner2D(
+            heuristic_weight_manhattan=self.astar_heuristic_weight_manhattan,
+            heuristic_weight_euclidean=self.astar_heuristic_weight_euclidean,
+            allow_diagonal=self.astar_allow_diagonal,
+            collision_checker=None,
+        )
         self.prm: Optional[PRMPlanner2D] = None
         self.irrt_star = InformedRRTStar2D(
             max_iterations=self.irrt_max_iterations,
@@ -122,7 +140,7 @@ class PathPlanner(Node):
         self.create_subscription(PointStamped, '/clicked_point', self._on_clicked_point, 10)
 
         self.timer = self.create_timer(max(0.1, 1.0 / replan_rate_hz), self._plan_if_needed)
-        self.get_logger().info('Path planner (PRM + Informed RRT* + D* Lite) initialized.')
+        self.get_logger().info('Path planner (A* + PRM + Informed RRT* + D* Lite) initialized.')
 
     def _on_map(self, msg: OccupancyGrid) -> None:
         data = np.array(msg.data, dtype=np.int16).reshape((msg.info.height, msg.info.width))
@@ -247,40 +265,61 @@ class PathPlanner(Node):
             self.get_logger().warn('Start or goal in obstacle. Waiting for valid state.')
             return
 
-        # Build PRM roadmap if needed
-        if not self.roadmap_built:
-            self._build_prm_roadmap()
+        path_world = None
         
-        # Update collision checker for IRRT*
-        self.irrt_star.collision_checker = self._is_free_world
+        # Strategy 1: Try A* (fastest grid-based planning)
+        if self.astar_enabled:
+            try:
+                path_grid = self.astar.plan(start, goal, self.state.grid)
+                if path_grid:
+                    path_world = [self.grid_to_world(gx, gy) for gx, gy in path_grid]
+                    self.get_logger().info(f'A* found path with {len(path_world)} waypoints.')
+            except Exception as e:
+                self.get_logger().warn(f'A* planning failed: {e}')
         
-        # Plan path using Informed RRT*
-        bounds = (
-            self.state.origin_x,
-            self.state.origin_x + self.state.width * self.state.resolution,
-            self.state.origin_y,
-            self.state.origin_y + self.state.height * self.state.resolution,
-        )
+        # Strategy 2: Try Informed RRT* with PRM roadmap
+        if not path_world:
+            if not self.roadmap_built:
+                self._build_prm_roadmap()
+            
+            self.irrt_star.collision_checker = self._is_free_world
+            bounds = (
+                self.state.origin_x,
+                self.state.origin_x + self.state.width * self.state.resolution,
+                self.state.origin_y,
+                self.state.origin_y + self.state.height * self.state.resolution,
+            )
+            
+            try:
+                path_world = self.irrt_star.plan(start_world, self.goal_xy, bounds)
+                if path_world:
+                    self.get_logger().info(f'Informed RRT* found path with {len(path_world)} waypoints.')
+            except Exception as e:
+                self.get_logger().warn(f'Informed RRT* planning failed: {e}')
         
-        path_world = self.irrt_star.plan(start_world, self.goal_xy, bounds)
-        
-        # Fallback to D* Lite if Informed RRT* fails
+        # Strategy 3: Fallback to D* Lite
         if not path_world and self.dstar_enabled:
-            self.get_logger().warn('Informed RRT* found no path; using D* Lite fallback.')
+            self.get_logger().warn('A* and Informed RRT* failed; using D* Lite fallback.')
             if self.dstar is None:
                 self.dstar = DStarLite2D(
                     resolution=self.state.resolution,
                     collision_checker=self._is_free_world,
                 )
-            path_world = self.dstar.plan(
-                start_world, self.goal_xy,
-                self.state.width, self.state.height,
-                self.state.origin_x, self.state.origin_y,
-            )
+            try:
+                path_world = self.dstar.plan(
+                    start_world, self.goal_xy,
+                    self.state.width, self.state.height,
+                    self.state.origin_x, self.state.origin_y,
+                )
+                if path_world:
+                    self.get_logger().info(f'D* Lite found path with {len(path_world)} waypoints.')
+            except Exception as e:
+                self.get_logger().warn(f'D* Lite planning failed: {e}')
         
         if not path_world:
-            self.get_logger().error('No valid path found.')
-            return
+            # Fallback: Return to starting position when all planners fail
+            self.get_logger().warn('All planning tiers failed. Returning to starting position.')
+            path_world = [start_world, self.start_xy]
 
         should_publish = self.replan_requested or self._path_changed(path_world)
 
